@@ -2,7 +2,8 @@
 title Student Websites
 
 REM Open websites for students
-start "" "https://www.tinkercad.com/joinclass/QHHYS66CU"
-start "" "https://google.com"
+start "" "https://zhecham.github.io/ICT-curriculum/2s_complement.html"
+start "" "https://zhecham.github.io/ICT-curriculum/Data%20Representation.html"
+start "" "https://zhecham.github.io/ICT-curriculum/g6_rev.html"
 
 exit
