@@ -3,5 +3,6 @@ title Student Websites
 
 REM Open websites for students
 start "" "https://www.tinkercad.com/joinclass/QHHYS66CU"
+"https://www.tinkercad.com/joinclass/QHHYS66CU"
 
 exit
