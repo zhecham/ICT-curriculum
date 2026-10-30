@@ -1,0 +1,31 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.400
+Set up the search
+Codes: 6, 14, 9, 21; Target: 14; Found = FALSE
+Start at position 1 with no match recorded yet.
+
+2
+00:00:04.400 --> 00:00:08.800
+Compare the first item
+Position 1: 6; 6 = 14 -&gt; FALSE
+One comparison has been made. Move to the next item.
+
+3
+00:00:08.800 --> 00:00:13.200
+Compare the second item
+Position 2: 14; 14 = 14 -&gt; TRUE; Found = TRUE
+The second comparison finds the target.
+
+4
+00:00:13.200 --> 00:00:17.600
+Stop at the match
+Compared: 6, 14; Total comparisons: 2; 9 and 21 are not checked
+A successful linear search stops as soon as the target is found.
+
+5
+00:00:17.600 --> 00:00:22.000
+Start a fresh search
+New target: 40; Compared: 6, 14, 9, 21; 4 comparisons; Found = FALSE
+An absent target requires every item to be checked.

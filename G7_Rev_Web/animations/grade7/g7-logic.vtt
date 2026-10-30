@@ -1,0 +1,31 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.400
+Find the truth values
+height = 140; height &gt;= 140 is True; has_ticket is False
+The boundary is included by &gt;=.
+
+2
+00:00:04.400 --> 00:00:08.800
+AND needs both
+True AND False; Result: False
+One False input prevents both inputs being True.
+
+3
+00:00:08.800 --> 00:00:13.200
+OR needs at least one
+True OR False; Result: True
+A single True input is enough for OR.
+
+4
+00:00:13.200 --> 00:00:17.600
+NOT reverses one value
+NOT False; Result: True
+NOT changes one truth value to its opposite.
+
+5
+00:00:17.600 --> 00:00:22.000
+Check the rules again
+True AND True = True; False OR False = False; NOT True = False
+Each line is an independent Boolean expression.

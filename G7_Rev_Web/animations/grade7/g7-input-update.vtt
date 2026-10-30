@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.000
+Read the visitor’s text
+name = input("Name: "); User enters Lina; name stores "Lina"
+The prompt and the entered response have different roles.
+
+2
+00:00:04.000 --> 00:00:08.000
+Calculate the badge cost
+total = 2 * 4; total = 8
+Python uses * for multiplication.
+
+3
+00:00:08.000 --> 00:00:12.000
+Add the bag fee
+total = total + 1; 8 + 1 = 9; total = 9
+The right side uses the old total before the update.
+
+4
+00:00:12.000 --> 00:00:16.000
+Display the stored name
+print(name); Screen: Lina
+An unquoted variable name uses its stored value.
+
+5
+00:00:16.000 --> 00:00:20.000
+Display the final total
+print(total); Screen: 9
+The second print starts the result on the next line.
+
+6
+00:00:20.000 --> 00:00:24.000
+Read the two result lines
+Lina; 9
+The entered name appears first, followed by the updated total.

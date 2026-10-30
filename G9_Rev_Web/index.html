@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-grade="9">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8e1537">
+  <meta name="description" content="Grade 9 Computer Science revision. Varied interactive practice, animated explanations, fresh timed challenges and a personal progress tracker.">
+  <title>Grade 9 Revision Lab · Cezeri</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/reveal.css?v=615ee850cbbb">
+  <link rel="stylesheet" href="styles.css?v=ccbb648dc7ef">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('cezeri-revision-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+  <script src="data.js?v=b4658ec51ca2" defer></script>
+  <script src="animations.js?v=817127681a5e" defer></script>
+  <script src="vendor/reveal.js?v=aa1bbbf2617b" defer></script>
+  <script src="core.js?v=641e3ac45658" defer></script>
+  <script src="app.js?v=bcc794023bfd" defer></script>
+<link rel="canonical" href="https://cezeri-grade9-revision-lab-2026.aljazari-sch-3127.chatgpt.site">
+<meta property="og:title" content="Grade 9 Computer Science Revision Lab">
+<meta property="og:description" content="Varied practice, animated explanations, fresh timed challenges and your progress in one workshop.">
+<meta property="og:url" content="https://cezeri-grade9-revision-lab-2026.aljazari-sch-3127.chatgpt.site">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to learning</a>
+  <header class="site-header">
+    <a class="brand" href="#home" data-route="home" aria-label="Revision Lab home">
+      <span class="brand-mark" aria-hidden="true">c<span>:</span></span>
+      <span class="brand-copy"><strong>CEZERI</strong><span>Revision Lab</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button data-route="home" class="nav-link active" aria-current="page"><span data-icon="home"></span><span>Overview</span></button>
+      <button data-route="practice" class="nav-link"><span data-icon="layers"></span><span>Workshop</span></button>
+      <button data-route="learn" class="nav-link"><span data-icon="play"></span><span>Animations</span></button>
+      <button data-route="progress" class="nav-link"><span data-icon="chart"></span><span>Progress</span></button>
+    </nav>
+    <div class="header-actions"><span class="grade-pill">GRADE 9</span><button id="theme-toggle" class="icon-button" aria-label="Switch to dark mode" title="Switch theme"></button></div>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading-state">Preparing your revision workshop…</div></main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="dialog"><div id="dialog-content"></div></dialog>
+  <input id="progress-import" type="file" accept="application/json,.json" hidden>
+  <div id="celebration" class="celebration" aria-hidden="true"></div>
+  <noscript><p class="noscript">Enable JavaScript to use the interactive questions and progress tracker.</p></noscript>
+</body>
+</html>

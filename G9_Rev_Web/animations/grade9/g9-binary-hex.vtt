@@ -1,0 +1,31 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.400
+Start with eight bits
+Unsigned binary: 00110110
+Each binary position has its own power-of-two value.
+
+2
+00:00:04.400 --> 00:00:08.800
+Read the 1 positions
+32 + 16 + 4 + 2 = 54; Denary value: 54
+Add only the place values selected by 1s.
+
+3
+00:00:08.800 --> 00:00:13.200
+Make two four-bit groups
+0011   0110
+Keep both groups in their original left-to-right order.
+
+4
+00:00:13.200 --> 00:00:17.600
+Replace each group
+0011 = hexadecimal 3; 0110 = hexadecimal 6; Hexadecimal value: 36
+One hexadecimal digit matches one complete four-bit group.
+
+5
+00:00:17.600 --> 00:00:22.000
+Check that the value is unchanged
+Binary: 00110110; Denary: 54; Hexadecimal: 36
+These are three representations of the same numerical value.

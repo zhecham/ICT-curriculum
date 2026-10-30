@@ -1,0 +1,3770 @@
+{
+  "grade": 7,
+  "title": "Grade 7 Revision Lab",
+  "tagline": "Build confidence with varied practice, clear explanations and a fresh timed challenge.",
+  "topics": [
+    {
+      "id": "W1-L1",
+      "title": "Flowchart symbols and tracing",
+      "summary": "Use the symbol’s job to identify its shape, then follow arrows and keep track of the current stored value.",
+      "tips": [
+        "Oval: Start or Stop. Rectangle: a process or calculation. Diamond: a decision. Parallelogram: input or output.",
+        "In a trace, evaluate the right-hand side using the current value before storing the new value.",
+        "Record a value after the stated instruction has run, not before it."
+      ]
+    },
+    {
+      "id": "W1-L2",
+      "title": "Outputs, errors and flowcharts",
+      "summary": "Output displays the latest stored value. A complete flowchart has a connected route through its instructions.",
+      "tips": [
+        "Trace the program before predicting what it displays; printing a value does not change it.",
+        "Check that an update uses the current variable when it is supposed to increase or decrease it.",
+        "Include Start and Stop, suitable symbols, directional arrows and clearly labelled decision routes."
+      ]
+    },
+    {
+      "id": "W2-L1",
+      "title": "Decisions and comparisons",
+      "summary": "Turn words such as below, at least and at most into comparisons, paying attention to whether the boundary is included.",
+      "tips": [
+        "Below uses <, and above uses >. At least uses >=, and at most uses <=.",
+        "Test a boundary value to check whether equality is handled correctly.",
+        "A decision has two possible truth results. Make the Yes and No routes match the condition you wrote."
+      ]
+    },
+    {
+      "id": "W2-L2",
+      "title": "Boolean logic: AND, OR, NOT",
+      "summary": "Evaluate comparisons first, then combine or reverse their truth values using the stated operator.",
+      "tips": [
+        "AND is True only when both inputs are True.",
+        "OR is True when at least one input is True, including when both are True.",
+        "NOT reverses one truth value. Keep independent expressions separate rather than carrying one answer into the next."
+      ]
+    },
+    {
+      "id": "W3-L1",
+      "title": "Patterns and subroutines",
+      "summary": "A subroutine gives a reusable group of instructions a name so that the main program can call it.",
+      "tips": [
+        "Find the smallest complete action block that repeats, preserving the action order.",
+        "A shared definition reduces repeated copies. Explain the effect: one change can apply to every call.",
+        "After a subroutine returns, the main program continues just after the call."
+      ]
+    },
+    {
+      "id": "W3-L2",
+      "title": "Tracing and debugging subroutines",
+      "summary": "Debugging means finding and correcting errors. Trace every action in each complete subroutine call.",
+      "tips": [
+        "Count how many times the subroutine is called and what happens during one call.",
+        "The final action of the last call determines the final state of a light or other stored state.",
+        "Setting a variable to a fixed number is different from adding that number to its current value."
+      ]
+    },
+    {
+      "id": "W4-L1",
+      "title": "Python syntax, IDE and print",
+      "summary": "Syntax is the set of rules for writing valid Python statements. An IDE helps you edit, run and debug them.",
+      "tips": [
+        "Check matching quotation marks and parentheses when repairing a print statement.",
+        "print(\"Hello\") displays Hello. The surrounding quotes are part of the code, not the displayed text.",
+        "print(name) displays the stored value; print(\"name\") displays the word name."
+      ]
+    },
+    {
+      "id": "W4-L2",
+      "title": "Variables, assignment and arithmetic",
+      "summary": "An assignment evaluates the right side and stores its result in the variable named on the left.",
+      "tips": [
+        "Use * for multiplication in Python. Replace variable names with their current values when tracing an expression.",
+        "A single = performs assignment in Python; it is not a question asking whether two values are equal.",
+        "If a question requests a calculation, include the expression rather than replacing it with only the final number."
+      ]
+    },
+    {
+      "id": "W5-L1",
+      "title": "Updates and data types",
+      "summary": "An update can use a variable’s old value to calculate its new one. Data types describe the kind of value being stored.",
+      "tips": [
+        "In score = score + 2, calculate from the old score and then replace the stored value.",
+        "Whole-number literals such as 18 are integers; decimal literals such as 12.5 are floats.",
+        "Quoted values are strings, even if their characters look like digits. True and False without quotes are Boolean values."
+      ]
+    },
+    {
+      "id": "W5-L2",
+      "title": "User input",
+      "summary": "input() reads text entered by the user. An assignment can store that response in a named variable.",
+      "tips": [
+        "The text inside input’s parentheses is the prompt displayed before the user types.",
+        "The entered response, rather than the prompt, is what input returns for the assignment to store.",
+        "Use the variable without quotation marks when displaying the stored response."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "g7-p8a701ddf",
+      "number": 1,
+      "label": "Practice 01",
+      "title": "Patterns, calls and truth values",
+      "marks": 5,
+      "topics": [
+        "W3-L1",
+        "W3-L2",
+        "W2-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A robot performs these four actions in order."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "Action"
+          ],
+          "rows": [
+            [
+              "1",
+              "Play a tone"
+            ],
+            [
+              "2",
+              "Turn clockwise"
+            ],
+            [
+              "3",
+              "Play a tone"
+            ],
+            [
+              "4",
+              "Turn clockwise"
+            ]
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Write the two-action pattern that repeats.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Compare the first pair of actions with the second pair, keeping their order.",
+          "widgets": [
+            {
+              "id": "pattern",
+              "type": "order",
+              "label": "Arrange the repeating pattern",
+              "items": [
+                "Turn clockwise",
+                "Play a tone"
+              ],
+              "answer": [
+                1,
+                0
+              ],
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Match the repeated actions",
+              "text": "Steps 1 and 3 match, and steps 2 and 4 match. This shows that a two-action block is repeated."
+            },
+            {
+              "title": "Retain the sequence",
+              "text": "The block begins with Play a tone and then Turn clockwise. Reversing the order would change the robot’s behaviour."
+            }
+          ],
+          "model": "Play a tone, then turn clockwise.",
+          "rubric": [
+            "Play a tone followed by turn clockwise (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Complete the table for this separate program.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The lamp starts OFF. The subroutine Flash turns the lamp ON, displays one star, and turns the lamp OFF. The main program calls Flash three times."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Result",
+                "Answer"
+              ],
+              "rows": [
+                [
+                  "Number of stars displayed",
+                  ""
+                ],
+                [
+                  "Final lamp state",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Work out the effect of one whole call, then apply the stated number of calls.",
+          "widgets": [
+            {
+              "id": "stars",
+              "type": "text",
+              "label": "Number of stars displayed",
+              "answer": "3",
+              "accept": [
+                "3"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            },
+            {
+              "id": "lamp",
+              "type": "choice",
+              "label": "Final lamp state",
+              "options": [
+                "ON",
+                "OFF"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Trace one complete call",
+              "text": "Each Flash call displays one star and finishes by turning the lamp OFF."
+            },
+            {
+              "title": "Count calls and check the last action",
+              "text": "Three complete calls display three stars. The third call also ends with the lamp OFF, so repeated calls do not leave it ON."
+            }
+          ],
+          "model": "Three stars are displayed. The lamp finishes OFF.",
+          "rubric": [
+            "3 stars (1 mark).",
+            "Final lamp state OFF (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "For this part only, is_wet is False and has_umbrella is True. Complete the table with True or False.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Expression",
+                "True or False"
+              ],
+              "rows": [
+                [
+                  "is_wet OR has_umbrella",
+                  ""
+                ],
+                [
+                  "NOT has_umbrella",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Use the supplied truth values separately in each row. Do not carry a result from one row into another.",
+          "widgets": [
+            {
+              "id": "or",
+              "type": "choice",
+              "label": "is_wet OR has_umbrella",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "not",
+              "type": "choice",
+              "label": "NOT has_umbrella",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Evaluate OR",
+              "text": "is_wet OR has_umbrella becomes False OR True. OR needs at least one True value, so this expression is True."
+            },
+            {
+              "title": "Evaluate NOT independently",
+              "text": "has_umbrella is True. NOT reverses that value, making NOT has_umbrella False."
+            }
+          ],
+          "model": "True; False, in row order.",
+          "rubric": [
+            "OR expression is True (1 mark).",
+            "NOT expression is False (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pd1bc0a4a",
+      "number": 2,
+      "label": "Practice 02",
+      "title": "Recognise Boolean data",
+      "marks": 1,
+      "topics": [
+        "W5-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which Python value has a Boolean data type?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look carefully at both the spelling and the quotation marks around each option.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "False",
+                "\"False\"",
+                "0",
+                "0.0"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Recognise the Boolean literals",
+              "text": "Python uses True and False, with capital first letters, as Boolean values. They have no surrounding quotation marks."
+            },
+            {
+              "title": "Check the other forms",
+              "text": "False is Boolean. \"False\" is text because it is quoted, 0 is an integer, and 0.0 is a float."
+            }
+          ],
+          "model": "A. False\nFalse is a Boolean literal; quotation marks would make it a string.",
+          "rubric": [
+            "A — False (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p1a2201a5",
+      "number": 3,
+      "label": "Practice 03",
+      "title": "Check a garden controller",
+      "marks": 4,
+      "topics": [
+        "W1-L2",
+        "W2-L1",
+        "W2-L2",
+        "W3-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "The four checks are independent. Use the values and instructions stated in each part."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "State the value output after these flowchart instructions run in order.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Step",
+                "Instruction"
+              ],
+              "rows": [
+                [
+                  "1",
+                  "seedlings <- 17"
+                ],
+                [
+                  "2",
+                  "seedlings <- seedlings + 4"
+                ],
+                [
+                  "3",
+                  "OUTPUT seedlings"
+                ]
+              ]
+            }
+          ],
+          "hint": "Use the current stored value when the update runs, then read that value at OUTPUT.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Value output",
+              "answer": "21",
+              "accept": [
+                "21"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Store and update the value",
+              "text": "The first instruction stores 17. The next instruction adds 4 to that stored value.",
+              "code": "17 + 4 = 21"
+            },
+            {
+              "title": "Read the output instruction",
+              "text": "OUTPUT displays the updated seedlings value. It does not return to the starting value or change it again."
+            }
+          ],
+          "model": "21. The update stores 17 + 4, and OUTPUT displays the new value.",
+          "rubric": [
+            "[1] Output 21."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "plants is a whole number. Write a comparison that is True when plants is at least 11.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "The comparison must include 11 itself and every larger whole number.",
+          "widgets": [
+            {
+              "id": "condition",
+              "type": "text",
+              "label": "Comparison using plants",
+              "answer": "plants >= 11",
+              "accept": [
+                "plants >= 11",
+                "11 <= plants",
+                "plants > 10",
+                "10 < plants",
+                "not (plants < 11)",
+                "NOT (plants < 11)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the comparison"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Translate the inclusive lower limit",
+              "text": "At least means greater than or equal to the stated boundary.",
+              "code": "plants >= 11"
+            },
+            {
+              "title": "Check values beside the boundary",
+              "text": "The condition is false for 10 and true for 11. Because plants is a whole-number count, plants > 10 gives the same result."
+            }
+          ],
+          "model": "plants >= 11",
+          "rubric": [
+            "[1] plants >= 11 or an equivalent whole-number comparison, including plants > 10 or 11 <= plants."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "is_dry is True and has_water is False. State the result of is_dry AND has_water.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "AND requires both conditions to be true.",
+          "widgets": [
+            {
+              "id": "result",
+              "type": "choice",
+              "label": "Result of the expression",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Substitute the two truth values",
+              "text": "The expression becomes True AND False. The second required condition is not satisfied."
+            },
+            {
+              "title": "Apply the AND rule",
+              "text": "AND is true only when both sides are true. With one false side, the result is False."
+            }
+          ],
+          "model": "False. Both conditions are required, but has_water is False.",
+          "rubric": [
+            "[1] False."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "The subroutine Chime plays one chime and then returns. The main program calls Chime four times. State the number of chimes played.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Count what one call does, then account for every call.",
+          "widgets": [
+            {
+              "id": "chimes",
+              "type": "text",
+              "label": "Number of chimes",
+              "answer": "4",
+              "accept": [
+                "4"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Trace one call",
+              "text": "Each call runs the subroutine once and produces one chime before returning."
+            },
+            {
+              "title": "Combine the repeated calls",
+              "text": "Four separate calls produce four chimes in total. Returning does not stop the main program from making the next call.",
+              "code": "1 + 1 + 1 + 1 = 4"
+            }
+          ],
+          "model": "4 chimes.",
+          "rubric": [
+            "[1] 4 chimes."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pc7bbfa8c",
+      "number": 4,
+      "label": "Practice 04",
+      "title": "Choose a comparison",
+      "marks": 1,
+      "topics": [
+        "W2-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "A decision must be True when temperature is below 10. Which comparison is correct?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Test what should happen when temperature is exactly 10 before choosing an operator.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "temperature <= 10",
+                "temperature < 10",
+                "temperature > 10",
+                "temperature = 10"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the boundary word",
+              "text": "Below means strictly smaller. A temperature equal to 10 must not satisfy the decision."
+            },
+            {
+              "title": "Use the strict comparison",
+              "text": "temperature < 10 is True for values smaller than 10 and False for 10 itself. Using <= would incorrectly include the boundary."
+            }
+          ],
+          "model": "B. temperature < 10\nThe < operator means strictly less than; 10 itself is excluded.",
+          "rubric": [
+            "B — temperature < 10 (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc1b9b283",
+      "number": 5,
+      "label": "Practice 05",
+      "title": "Assignment arithmetic and input",
+      "marks": 5,
+      "topics": [
+        "W4-L2",
+        "W5-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "State the output of this Python program.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "total = 6 + 4\nprint(total)"
+            }
+          ],
+          "hint": "Evaluate the expression on the right of = before reading the print statement.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Program output",
+              "answer": "10",
+              "accept": [
+                "10"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Calculate and store",
+              "text": "The expression 6 + 4 has the value 10. The assignment stores that result in total."
+            },
+            {
+              "title": "Display the variable value",
+              "text": "print(total) displays the value stored in total, not the variable name. The output is 10."
+            }
+          ],
+          "model": "10",
+          "rubric": [
+            "10. (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Write one Python assignment that calculates 5 multiplied by 3 and stores the result in total_cost.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Put the destination variable on the left and use Python’s multiplication operator on the right.",
+          "widgets": [
+            {
+              "id": "assignment",
+              "type": "choice",
+              "label": "Choose an assignment that performs the requested calculation",
+              "options": [
+                "total_cost = 15",
+                "5 * 3 = total_cost",
+                "total_cost = 5 + 3",
+                "total_cost = 5 * 3"
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Build the calculation",
+              "text": "Python uses * for multiplication, so the requested expression is 5 * 3. Reversing the two factors would give the same product."
+            },
+            {
+              "title": "Store the result in the named variable",
+              "text": "Write total_cost on the left of = and the expression on the right. Giving only 15 does not show the requested calculation.",
+              "code": "total_cost = 5 * 3"
+            }
+          ],
+          "model": "total_cost = 5 * 3",
+          "rubric": [
+            "total_cost = 5 * 3 or total_cost = 3 * 5. Accept parentheses. Do not accept only total_cost = 15 because the calculation was requested. (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State what the assignment operator = does in apples_per_box = 4.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Read assignment as an instruction to store a value, rather than as a question about equality.",
+          "widgets": [
+            {
+              "id": "meaning",
+              "type": "choice",
+              "label": "Choose what = does in this statement",
+              "options": [
+                "Checks whether apples_per_box is already 4",
+                "Stores 4 in apples_per_box",
+                "Displays 4 on the screen"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find the source and destination",
+              "text": "In an assignment, the expression on the right provides the value. The name on the left is the variable that receives it."
+            },
+            {
+              "title": "Apply that rule here",
+              "text": "The right side is 4 and the destination is apples_per_box, so the statement stores 4 there. It is not an equality test."
+            }
+          ],
+          "model": "It stores the value 4 in the variable apples_per_box.",
+          "rubric": [
+            "Stores/assigns the right-hand value in the named variable. Do not accept checks whether the two sides are equal. (1 mark)."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "The user types Amina when this statement runs. State the value stored in name.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "name = input(\"Your name: \")"
+            }
+          ],
+          "hint": "Distinguish the prompt shown by the program from the text the user actually enters.",
+          "widgets": [
+            {
+              "id": "storedName",
+              "type": "choice",
+              "label": "Choose the text stored in name",
+              "options": [
+                "Your name:",
+                "name",
+                "Amina",
+                "input"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the entered response",
+              "text": "The prompt is Your name:, but the question says the user types Amina. input returns the entered text."
+            },
+            {
+              "title": "Follow the assignment",
+              "text": "The returned text is stored in name. The stored value is therefore Amina, not the prompt or the variable name."
+            }
+          ],
+          "model": "Amina",
+          "rubric": [
+            "Amina. Accept quotation marks around the text. (1 mark)."
+          ]
+        },
+        {
+          "id": "e",
+          "prompt": "State the message displayed before the user types their name.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look at the text inside input’s parentheses, before the user’s response is read.",
+          "widgets": [
+            {
+              "id": "prompt",
+              "type": "choice",
+              "label": "Choose the message displayed before the user types",
+              "options": [
+                "Amina",
+                "Your name:",
+                "name",
+                "input"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find the prompt argument",
+              "text": "The string inside input(\"Your name: \") is the prompt. It is shown before Python waits for the user to type."
+            },
+            {
+              "title": "Separate prompt from response",
+              "text": "The message is Your name:. Amina is the later response, so it is not the message displayed first."
+            }
+          ],
+          "model": "Your name:",
+          "rubric": [
+            "Your name: . Accept omission of the colon or final space; accept quotation marks. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pc6bbf8f9",
+      "number": 6,
+      "label": "Practice 06",
+      "title": "Reverse a truth value",
+      "marks": 1,
+      "topics": [
+        "W2-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which Boolean operator changes True to False and False to True?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look for an operator that works on one truth value rather than combining two.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "NOT",
+                "AND",
+                "OR",
+                ">"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Separate the operator roles",
+              "text": "AND and OR combine two Boolean values. The reversal operation works on one Boolean value."
+            },
+            {
+              "title": "Apply the reversal rule",
+              "text": "NOT True is False, and NOT False is True. That is exactly the change described in the question."
+            }
+          ],
+          "model": "A. NOT\nNOT reverses a Boolean truth value.",
+          "rubric": [
+            "A — NOT (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p89701c4c",
+      "number": 7,
+      "label": "Practice 07",
+      "title": "Trace and repair a short flowchart",
+      "marks": 5,
+      "topics": [
+        "W1-L1",
+        "W1-L2",
+        "W2-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "These instructions run in order in a flowchart. The arrow <- means assign a value."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "Instruction"
+          ],
+          "rows": [
+            [
+              "1",
+              "stars <- 6"
+            ],
+            [
+              "2",
+              "stars <- stars + 2"
+            ],
+            [
+              "3",
+              "OUTPUT stars"
+            ]
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the trace table with the value of stars after each stated step.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "After step",
+                "Value of stars"
+              ],
+              "rows": [
+                [
+                  "1",
+                  ""
+                ],
+                [
+                  "2",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Store the starting value first, then use it on the right-hand side of the update.",
+          "widgets": [
+            {
+              "id": "step1",
+              "type": "text",
+              "label": "Value of stars after step 1",
+              "answer": "6",
+              "accept": [
+                "6"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            },
+            {
+              "id": "step2",
+              "type": "text",
+              "label": "Value of stars after step 2",
+              "answer": "8",
+              "accept": [
+                "8"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the first assignment",
+              "text": "Step 1 assigns 6 to stars. This sets the starting value rather than adding to an earlier value."
+            },
+            {
+              "title": "Apply the update",
+              "text": "Step 2 uses that stored 6, adds 2 and stores 8 back into stars. The trace entries are 6 and 8."
+            }
+          ],
+          "model": "After step 1: 6. After step 2: 8.",
+          "rubric": [
+            "Step 1 is 6 (1 mark).",
+            "Step 2 is 8; on paper, allow the stated step 1 value plus 2 (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State the value output at step 3.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Use the value left by the most recent assignment.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Value output",
+              "answer": "8",
+              "accept": [
+                "8"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find the latest stored value",
+              "text": "The update has changed stars from 6 to 8. No further assignment occurs before OUTPUT."
+            },
+            {
+              "title": "Read the output instruction",
+              "text": "OUTPUT stars displays the current stored value, so it displays 8. Output does not change stars."
+            }
+          ],
+          "model": "8",
+          "rubric": [
+            "8; on paper, allow the value recorded after step 2 (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "For a separate decision, tickets is a whole number. Choose the comparison that is True for 5 or more tickets.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Test the boundary value and one value below it.",
+          "widgets": [
+            {
+              "id": "condition",
+              "type": "choice",
+              "label": "Choose the decision condition",
+              "options": [
+                "tickets > 5",
+                "tickets < 5",
+                "tickets >= 5",
+                "tickets = 5"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Include the boundary",
+              "text": "The phrase 5 or more includes exactly 5 as well as larger whole numbers."
+            },
+            {
+              "title": "Use an inclusive lower limit",
+              "text": "tickets >= 5 includes all required values. tickets > 5 would exclude 5, while an equality check would exclude numbers above 5."
+            }
+          ],
+          "model": "tickets >= 5. For a whole-number input, tickets > 4 is also equivalent.",
+          "rubric": [
+            "Select tickets >= 5; accept a clearly equivalent comparison when practising on paper (1 mark)."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "A different process should add 2 to stars, but it contains stars <- 2. Write the corrected instruction.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "The new value must depend on the existing value, not just a fixed number.",
+          "widgets": [
+            {
+              "id": "fixedProcess",
+              "type": "choice",
+              "label": "Choose the corrected process instruction",
+              "options": [
+                "stars <- stars + 2",
+                "stars <- stars - 2",
+                "stars <- 2",
+                "stars <- stars * 2"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify why the original fails",
+              "text": "stars <- 2 stores the fixed value 2. It does not use the old value, so it cannot add 2 to it."
+            },
+            {
+              "title": "Calculate from the old value",
+              "text": "stars + 2 uses the current value and increases it by 2. Store that result back into stars.",
+              "code": "stars <- stars + 2"
+            }
+          ],
+          "model": "stars <- stars + 2",
+          "rubric": [
+            "stars <- stars + 2, or a clearly equivalent assignment such as stars = stars + 2 (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pc5bbf766",
+      "number": 8,
+      "label": "Practice 08",
+      "title": "Identify a subroutine",
+      "marks": 1,
+      "topics": [
+        "W3-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What is a subroutine?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about something a program can call and then return from.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "A named collection of values stored in a program.",
+                "A named comment explaining how a program works.",
+                "A named group of instructions that can be called when needed.",
+                "A named instruction that always ends the whole program."
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify what is reusable",
+              "text": "A subroutine holds a group of instructions under a name. The instructions can run whenever the program calls that name."
+            },
+            {
+              "title": "Distinguish instructions from data",
+              "text": "A collection of values stores data, and a comment explains code. Neither describes a named group of callable instructions, so the third option is correct."
+            }
+          ],
+          "model": "C. A named group of instructions that can be called when needed.\nA subroutine is a named group of reusable instructions that can be called from elsewhere in a program.",
+          "rubric": [
+            "C — A named group of instructions that can be called when needed. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p85701600",
+      "number": 9,
+      "label": "Practice 09",
+      "title": "Include the upper boundary",
+      "marks": 1,
+      "topics": [
+        "W2-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "A box may hold at most 12 items. Which comparison is True when the number items is allowed?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check whether a box containing exactly 12 items should be allowed.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "items < 12",
+                "items <= 12",
+                "items >= 12",
+                "items > 12"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Interpret the boundary",
+              "text": "At most 12 means 12 or fewer. The boundary value 12 must be included."
+            },
+            {
+              "title": "Choose the inclusive comparison",
+              "text": "items <= 12 is True below the limit and at the limit. The strict < comparison would wrongly reject exactly 12."
+            }
+          ],
+          "model": "B. items <= 12.",
+          "rubric": [
+            "B — items <= 12 (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc8bbfc1f",
+      "number": 10,
+      "label": "Practice 10",
+      "title": "Predict one update",
+      "marks": 1,
+      "topics": [
+        "W1-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "An algorithm sets value to 4, adds 3 to value, then outputs value. What is output?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Follow the instructions in order, and keep the updated value for the output.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "3",
+                "4",
+                "1",
+                "7"
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Store the starting value",
+              "text": "The first instruction stores 4 in value. This is the number used by the next instruction."
+            },
+            {
+              "title": "Update, then display",
+              "text": "Adding 3 replaces the stored value with 4 + 3 = 7. The output instruction displays this latest value, so the answer is 7."
+            }
+          ],
+          "model": "D. 7\nThe value changes from 4 to 4 + 3, which is 7.",
+          "rubric": [
+            "D — 7 (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc3bbf440",
+      "number": 11,
+      "label": "Practice 11",
+      "title": "Understand syntax",
+      "marks": 1,
+      "topics": [
+        "W4-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What is meant by the syntax of a programming language?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Consider why a statement might be rejected before it can run.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "The final value output by a program.",
+                "The hardware used to run a program.",
+                "The time taken to run a program.",
+                "The rules for writing valid statements in that language."
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Look at statement rules",
+              "text": "A language needs rules for how instructions are written, including spelling, punctuation and structure. These rules are its syntax."
+            },
+            {
+              "title": "Separate syntax from results",
+              "text": "Output and running time describe what happens during execution. Hardware is the equipment. None of these is the set of rules for writing valid statements."
+            }
+          ],
+          "model": "D. The rules for writing valid statements in that language.\nSyntax defines the permitted structure and spelling of statements.",
+          "rubric": [
+            "D — The rules for writing valid statements in that language. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pccb9c3d4",
+      "number": 12,
+      "label": "Practice 12",
+      "title": "Complete a Python program",
+      "marks": 5,
+      "topics": [
+        "W5-L2",
+        "W4-L2",
+        "W5-L1",
+        "W4-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A visitor buys two badges that cost 4 each. The program must read the visitor's name, calculate the badge cost by multiplying 2 and 4, and then add a bag fee of 1 to total. It must display the entered name, followed by the final total on the next line."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the five blanks in the Python 3 program.",
+          "marks": 5,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "name = __________________________\ntotal = _________________________\ntotal = total + _________________\nprint(__________________________)\nprint(__________________________)"
+            }
+          ],
+          "hint": "Match each blank to one requirement: read text, calculate a product, update a total, then display two variable values.",
+          "widgets": [
+            {
+              "id": "readName",
+              "type": "choice",
+              "label": "Blank 1: expression that reads the visitor’s name",
+              "options": [
+                "input(\"Name: \")",
+                "print(\"Name: \")",
+                "\"Name: \"",
+                "input"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "badgeCost",
+              "type": "text",
+              "label": "Blank 2: calculate the badge cost",
+              "answer": "2 * 4",
+              "accept": [
+                "2 * 4",
+                "4 * 2",
+                "(2 * 4)",
+                "(4 * 2)",
+                "(2) * 4",
+                "2 * (4)",
+                "(2) * (4)",
+                "(4) * 2",
+                "4 * (2)",
+                "(4) * (2)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the multiplication"
+            },
+            {
+              "id": "bagFee",
+              "type": "text",
+              "label": "Blank 3: amount added to total",
+              "answer": "1",
+              "accept": [
+                "1"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type the bag fee"
+            },
+            {
+              "id": "nameOutput",
+              "type": "text",
+              "label": "Blank 4: first print value",
+              "answer": "name",
+              "accept": [
+                "name",
+                "(name)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the variable name"
+            },
+            {
+              "id": "totalOutput",
+              "type": "text",
+              "label": "Blank 5: second print value",
+              "answer": "total",
+              "accept": [
+                "total",
+                "(total)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the variable name"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read text into name",
+              "text": "input(\"Name: \") reads the visitor’s typed name. The supplied name = stores that text, while print would only display a message."
+            },
+            {
+              "title": "Show the requested multiplication",
+              "text": "Two badges at 4 each cost 2 * 4 = 8. Put the multiplication in the blank because the question asks the program to calculate it."
+            },
+            {
+              "title": "Update the existing total",
+              "text": "The third line already says total = total +. Adding 1 changes the stored total from 8 to 9."
+            },
+            {
+              "title": "Print values in the requested order",
+              "text": "Use name inside the first print and total inside the second. Quoting either identifier would display the word itself instead of its stored value."
+            }
+          ],
+          "model": "name = input(\"Name: \")\ntotal = 2 * 4\ntotal = total + 1\nprint(name)\nprint(total)",
+          "rubric": [
+            "First blank: input(\"Name: \") or input() with any suitable optional prompt. The entered text is stored in name. (1 mark).",
+            "Second blank: 2 * 4 or 4 * 2. Accept parentheses. The question requests a calculation, so do not accept only 8. (1 mark).",
+            "Third blank: 1. The supplied statement then updates total to include the bag fee. (1 mark).",
+            "Fourth blank: name, without quotation marks, so the program displays the entered text. (1 mark).",
+            "Fifth blank: total, without quotation marks, so the program displays the calculated final value. Award independently of an earlier calculation error. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g7-pd2bc0bdd",
+      "number": 13,
+      "label": "Practice 13",
+      "title": "Multiply stored values",
+      "marks": 1,
+      "topics": [
+        "W4-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What does this Python program output?",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "packs = 3\nitems_per_pack = 4\nprint(packs * items_per_pack)"
+            }
+          ],
+          "hint": "Find the current value of each variable, then use the operator inside print().",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "7",
+                "12",
+                "34",
+                "1"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read both assignments",
+              "text": "packs stores 3 and items_per_pack stores 4. Use these stored numbers when evaluating the expression."
+            },
+            {
+              "title": "Apply multiplication",
+              "text": "The * operator multiplies. The expression is 3 * 4 = 12, and print displays 12. Adding would give a different result."
+            }
+          ],
+          "model": "B. 12\nThe multiplication operator gives 3 times 4, which is 12.",
+          "rubric": [
+            "B — 12 (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p88701ab9",
+      "number": 14,
+      "label": "Practice 14",
+      "title": "Choose a process symbol",
+      "marks": 1,
+      "topics": [
+        "W1-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which flowchart symbol should contain the instruction coins <- coins + 1?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Decide whether the instruction reads data, asks a question, or changes a stored value.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "Diamond",
+                "Parallelogram",
+                "Rectangle",
+                "Oval"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the action",
+              "text": "coins <- coins + 1 calculates a new value and stores it. This is a process, not an input, output or decision."
+            },
+            {
+              "title": "Match the action to the shape",
+              "text": "A rectangle represents a process. The instruction should therefore go inside a rectangle."
+            }
+          ],
+          "model": "C. Rectangle. The instruction calculates and stores a value, so it is a process.",
+          "rubric": [
+            "C — Rectangle (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p8b701f72",
+      "number": 15,
+      "label": "Practice 15",
+      "title": "Read a print statement",
+      "marks": 1,
+      "topics": [
+        "W4-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What does this Python statement display?",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "print(\"Start\")"
+            }
+          ],
+          "hint": "Separate Python’s punctuation from the text that reaches the screen.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "\"Start\"",
+                "print(\"Start\")",
+                "Start",
+                "start"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the string content",
+              "text": "The string inside the quotation marks is Start, with a capital S."
+            },
+            {
+              "title": "Apply print",
+              "text": "print displays the content of the string, so it displays Start without quotation marks or the surrounding Python statement."
+            }
+          ],
+          "model": "C. Start.",
+          "rubric": [
+            "C — Start (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p8c702105",
+      "number": 16,
+      "label": "Practice 16",
+      "title": "Identify a whole-number type",
+      "marks": 1,
+      "topics": [
+        "W5-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What is the data type of the Python value 18?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check whether the value has a decimal point, quotation marks, or a Boolean name.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "Integer",
+                "Float / real",
+                "String",
+                "Boolean"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Inspect the written value",
+              "text": "18 is an unquoted whole-number literal. There is no decimal point and it is not True or False."
+            },
+            {
+              "title": "Choose the matching type",
+              "text": "Python stores this literal as an integer. Quotation marks would make a text value, and a decimal point such as 18.0 would indicate a float."
+            }
+          ],
+          "model": "A. Integer.",
+          "rubric": [
+            "A — Integer (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p1821fe7f",
+      "number": 17,
+      "label": "Practice 17",
+      "title": "Mark the beginning and end",
+      "marks": 1,
+      "topics": [
+        "W1-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which flowchart symbol is normally used for Start and Stop?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about the symbol that marks an endpoint, rather than an action or a decision.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "Rectangle",
+                "Parallelogram",
+                "Oval",
+                "Diamond"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the role",
+              "text": "Start and Stop mark where an algorithm begins and finishes. They do not calculate a value, receive data or choose a branch."
+            },
+            {
+              "title": "Match the standard symbol",
+              "text": "An oval is a terminator symbol used for these endpoints. A rectangle is a process, a parallelogram is input/output and a diamond is a decision."
+            }
+          ],
+          "model": "C. Oval. Start and Stop use terminator symbols.",
+          "rubric": [
+            "[1] Select C: Oval"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc0b9b0f0",
+      "number": 18,
+      "label": "Practice 18",
+      "title": "Python tools syntax and values",
+      "marks": 5,
+      "topics": [
+        "W4-L1",
+        "W5-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "State one task an integrated development environment (IDE) helps a programmer carry out.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about a tool that helps a person write, run or inspect code.",
+          "widgets": [
+            {
+              "id": "ide",
+              "type": "choice",
+              "label": "Choose a valid IDE task",
+              "options": [
+                "Guarantee that a program has no logic errors",
+                "Edit and run program code",
+                "Choose the problem requirements without the programmer"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify what an IDE provides",
+              "text": "An integrated development environment brings programming tools together. An editor and a way to run code are typical examples."
+            },
+            {
+              "title": "Give an actual task",
+              "text": "Editing and running code is a valid task. An IDE can help find problems, but it does not guarantee correct logic or decide the problem requirements."
+            }
+          ],
+          "model": "Edit, run or debug a program.",
+          "rubric": [
+            "Any one valid IDE task: writing/editing code, running a program, debugging, showing syntax errors, or displaying program output. Do not accept only typing the expansion of IDE. (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Rewrite the line to correct its syntax error.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "print(\"Ready)"
+            }
+          ],
+          "hint": "Check that the quotation marks form a matching pair and that print has its closing parenthesis.",
+          "widgets": [
+            {
+              "id": "fixedLine",
+              "type": "text",
+              "label": "Corrected Python line",
+              "answer": "print(\"Ready\")",
+              "accept": [
+                "print(\"Ready\")",
+                "print('Ready')"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the complete corrected line"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Locate the unfinished string",
+              "text": "The opening double quote starts the text Ready. The original line has no matching closing quote before the parenthesis."
+            },
+            {
+              "title": "Close the string and call",
+              "text": "Put the matching quotation mark after Ready and retain the closing parenthesis. Either matching single or matching double quotation marks is valid.",
+              "code": "print(\"Ready\")"
+            }
+          ],
+          "model": "print(\"Ready\")",
+          "rubric": [
+            "print(\"Ready\") or print('Ready') with matching quotation marks and closing parenthesis. (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State exactly what this Python statement displays.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "print(\"Welcome\")"
+            }
+          ],
+          "hint": "Separate the text inside the quotation marks from the punctuation used to write the Python statement.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "choice",
+              "label": "Choose the exact displayed text",
+              "options": [
+                "\"Welcome\"",
+                "print(\"Welcome\")",
+                "Welcome",
+                "welcome"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the string content",
+              "text": "The quotation marks tell Python where the text begins and ends. The text inside them is Welcome, including the capital W."
+            },
+            {
+              "title": "Display only the content",
+              "text": "print displays the string content. It does not display the quotation marks or the word print, so the output is Welcome."
+            }
+          ],
+          "model": "Welcome",
+          "rubric": [
+            "Welcome, without quotation marks. (1 mark)."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "State the data type of each value.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Value",
+                "Data type"
+              ],
+              "rows": [
+                [
+                  "12.5",
+                  ""
+                ],
+                [
+                  "\"Hello\"",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Check whether each value is a decimal number or text surrounded by quotation marks.",
+          "widgets": [
+            {
+              "id": "decimalType",
+              "type": "choice",
+              "label": "Data type of 12.5",
+              "options": [
+                "Integer",
+                "Float / real",
+                "String",
+                "Boolean"
+              ],
+              "answer": 1,
+              "marks": 1
+            },
+            {
+              "id": "textType",
+              "type": "choice",
+              "label": "Data type of \"Hello\"",
+              "options": [
+                "Integer",
+                "Float / real",
+                "String",
+                "Boolean"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Classify the unquoted decimal",
+              "text": "12.5 is a numeric value with a decimal point, so its Python data type is float. The school answer real is also accepted."
+            },
+            {
+              "title": "Classify the quoted value",
+              "text": "\"Hello\" is surrounded by quotation marks, so it is a string. The word inside the quotes is text, not a Boolean value or a number."
+            }
+          ],
+          "model": "12.5: float or real. \"Hello\": string.",
+          "rubric": [
+            "12.5 is float; accept real. (1 mark).",
+            "\"Hello\" is string; accept str. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-p19220012",
+      "number": 19,
+      "label": "Practice 19",
+      "title": "Find a three-action pattern",
+      "marks": 1,
+      "topics": [
+        "W3-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which shortest block can be repeated to create the entire sequence shown?",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Clap → Tap → Tap → Clap → Tap → Tap"
+            }
+          ],
+          "hint": "Start with the first action and check that repeating a proposed block recreates every action in the same order.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "Clap, Tap",
+                "Tap, Tap, Clap",
+                "Clap, Tap, Tap",
+                "Clap, Clap, Tap"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check the first complete block",
+              "text": "The first three actions are Clap, Tap, Tap. The next three actions match that block exactly."
+            },
+            {
+              "title": "Check that a shorter block does not work",
+              "text": "Repeating Clap, Tap would put Clap in position 3, but position 3 is Tap. A three-action block is needed to reproduce all six actions.",
+              "code": "Clap, Tap, Tap | Clap, Tap, Tap"
+            }
+          ],
+          "model": "C. Clap, Tap, Tap. Repeating that block twice recreates the six actions.",
+          "rubric": [
+            "[1] Select C: Clap, Tap, Tap"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc4b9b73c",
+      "number": 20,
+      "label": "Practice 20",
+      "title": "Read and store text",
+      "marks": 1,
+      "topics": [
+        "W5-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which Python statement asks the user for a name and stores the answer in name?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look for both a function call and an assignment to the requested variable.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "print(\"Name: \")",
+                "name = \"Name: \"",
+                "name = input",
+                "name = input(\"Name: \")"
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the entered text",
+              "text": "input(\"Name: \") displays a prompt, waits for the user, and returns the text entered. The parentheses are needed to call input."
+            },
+            {
+              "title": "Store the response",
+              "text": "Putting name = before the call stores the returned text in name. print only displays something, and assigning \"Name: \" only stores that fixed text."
+            }
+          ],
+          "model": "D. name = input(\"Name: \")\ninput(\"Name: \") asks for text and the assignment stores the entered text in name.",
+          "rubric": [
+            "D — name = input(\"Name: \") (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p90702751",
+      "number": 21,
+      "label": "Practice 21",
+      "title": "Complete a club-order program",
+      "marks": 5,
+      "topics": [
+        "W5-L2",
+        "W4-L2",
+        "W5-L1",
+        "W4-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A club buys three notebooks at 2 each and two pens at 1 each. The program must read the club name, calculate the notebook cost in total by multiplying 3 and 2, calculate the pen cost in pen_cost by multiplying 2 and 1, and add pen_cost to total. It must display the entered club name, followed by the final total on the next line."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the five blanks in the Python 3 program.",
+          "marks": 5,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "club = __________________________\ntotal = _________________________\npen_cost = ______________________\ntotal = _________________________\nprint(club)\nprint(__________________________)"
+            }
+          ],
+          "hint": "Work through the requirements in order. The update must include both the old total and the pen cost.",
+          "widgets": [
+            {
+              "id": "readClub",
+              "type": "choice",
+              "label": "Blank 1: read the club name",
+              "options": [
+                "\"Club: \"",
+                "print(\"Club: \")",
+                "input",
+                "input(\"Club: \")"
+              ],
+              "answer": 3,
+              "marks": 1
+            },
+            {
+              "id": "notebookCost",
+              "type": "text",
+              "label": "Blank 2: calculate the notebook cost",
+              "answer": "3 * 2",
+              "accept": [
+                "3 * 2",
+                "2 * 3",
+                "(3 * 2)",
+                "(2 * 3)",
+                "(3) * 2",
+                "3 * (2)",
+                "(3) * (2)",
+                "(2) * 3",
+                "2 * (3)",
+                "(2) * (3)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the multiplication"
+            },
+            {
+              "id": "penCost",
+              "type": "text",
+              "label": "Blank 3: calculate the pen cost",
+              "answer": "2 * 1",
+              "accept": [
+                "2 * 1",
+                "1 * 2",
+                "(2 * 1)",
+                "(1 * 2)",
+                "(2) * 1",
+                "2 * (1)",
+                "(2) * (1)",
+                "(1) * 2",
+                "1 * (2)",
+                "(1) * (2)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the multiplication"
+            },
+            {
+              "id": "updatedTotal",
+              "type": "text",
+              "label": "Blank 4: expression for the updated total",
+              "answer": "total + pen_cost",
+              "accept": [
+                "total + pen_cost",
+                "pen_cost + total",
+                "(total + pen_cost)",
+                "(pen_cost + total)",
+                "total + (pen_cost)",
+                "(total) + pen_cost"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the two-variable sum"
+            },
+            {
+              "id": "totalOutput",
+              "type": "text",
+              "label": "Blank 5: value displayed after the club name",
+              "answer": "total",
+              "accept": [
+                "total",
+                "(total)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the variable name"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the club name as text",
+              "text": "input(\"Club: \") reads the typed name, and the supplied assignment stores it in club. A suitable optional prompt may also be used in a paper solution."
+            },
+            {
+              "title": "Calculate the two costs",
+              "text": "The notebooks cost 3 * 2 = 6 and the pens cost 2 * 1 = 2. Keep the multiplications in the blanks because the program is required to calculate them."
+            },
+            {
+              "title": "Update the stored total",
+              "text": "total + pen_cost adds the pen cost to the existing notebook cost. The assignment replaces total with 6 + 2 = 8."
+            },
+            {
+              "title": "Display the requested results",
+              "text": "print(club) is already supplied. The last blank needs total without quotes, so the final numeric value appears on the next line."
+            }
+          ],
+          "model": "club = input(\"Club: \")\ntotal = 3 * 2\npen_cost = 2 * 1\ntotal = total + pen_cost\nprint(club)\nprint(total)\n\nIf the user enters Chess, the two result lines are:\nChess\n8",
+          "rubric": [
+            "Blank 1: input(\"Club: \") or input() with any suitable optional prompt (1 mark).",
+            "Blank 2: 3 * 2 or 2 * 3, with optional parentheses; do not accept only 6 because a calculation is required (1 mark).",
+            "Blank 3: 2 * 1 or 1 * 2, with optional parentheses; do not accept only 2 because a calculation is required (1 mark).",
+            "Blank 4: total + pen_cost or pen_cost + total. Award the update independently of an earlier arithmetic error (1 mark).",
+            "Blank 5: total without quotation marks, so the program displays its stored value. Award independently of previous errors (1 mark)."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g7-pc9bbfdb2",
+      "number": 22,
+      "label": "Practice 22",
+      "title": "Input and output symbols",
+      "marks": 1,
+      "topics": [
+        "W1-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which flowchart symbol is used for input or output?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about whether information is entering, leaving or being processed by the program.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "Rectangle",
+                "Oval",
+                "Parallelogram",
+                "Diamond"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Match the job to a symbol",
+              "text": "Flowcharts use different shapes for different jobs: a process changes a value, a decision asks a question, and an input or output transfers information."
+            },
+            {
+              "title": "Choose the information symbol",
+              "text": "A parallelogram represents input or output. A rectangle is a process, an oval is a terminator, and a diamond is a decision."
+            }
+          ],
+          "model": "C. Parallelogram\nA parallelogram represents an input or output operation.",
+          "rubric": [
+            "C — Parallelogram (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-p1321f6a0",
+      "number": 23,
+      "label": "Practice 23",
+      "title": "Read and update Python values",
+      "marks": 4,
+      "topics": [
+        "W5-L2",
+        "W4-L2",
+        "W5-L1",
+        "W4-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "Each short Python snippet is independent of the others."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "The user types Orion when this statement runs. State the value stored in team.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "team = input(\"Team: \")"
+            }
+          ],
+          "hint": "Separate the prompt shown by the program from the response entered by the user.",
+          "widgets": [
+            {
+              "id": "stored",
+              "type": "choice",
+              "label": "Value stored in team",
+              "options": [
+                "Team:",
+                "team",
+                "Orion",
+                "input"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the prompt",
+              "text": "The text Team: asks the user for a response. It is not automatically the response stored in the variable."
+            },
+            {
+              "title": "Follow the assignment",
+              "text": "input returns the entered text Orion. The assignment stores that text in team without changing it."
+            }
+          ],
+          "model": "Orion.",
+          "rubric": [
+            "[1] Orion, the text entered by the user."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State the output of this program.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "boxes = 4\ncards_per_box = 7\nprint(boxes * cards_per_box)"
+            }
+          ],
+          "hint": "Substitute the two stored values into the multiplication.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Value output",
+              "answer": "28",
+              "accept": [
+                "28"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify both factors",
+              "text": "boxes stores 4 and cards_per_box stores 7. The * operator multiplies these values."
+            },
+            {
+              "title": "Display the product",
+              "text": "The print statement evaluates the expression and displays its result.",
+              "code": "4 * 7 = 28"
+            }
+          ],
+          "model": "28.",
+          "rubric": [
+            "[1] 28."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State the output after the update.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "labels = 31\nlabels = labels - 5\nprint(labels)"
+            }
+          ],
+          "hint": "Evaluate the right side using the current value before replacing labels.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Updated value output",
+              "answer": "26",
+              "accept": [
+                "26"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Use the current value",
+              "text": "labels starts at 31. In labels - 5, Python uses that stored value to calculate the next value.",
+              "code": "31 - 5 = 26"
+            },
+            {
+              "title": "Store the new value",
+              "text": "The assignment replaces 31 with 26. The final print reads the updated value rather than the starting value."
+            }
+          ],
+          "model": "26.",
+          "rubric": [
+            "[1] 26."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "Rewrite this statement so that it correctly prints the message Packed.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "print(\"Packed\""
+            }
+          ],
+          "hint": "Check that both quotation marks and both parentheses are present.",
+          "widgets": [
+            {
+              "id": "corrected",
+              "type": "choice",
+              "label": "Choose the corrected statement",
+              "options": [
+                "print(\"Packed\")",
+                "print(Packed)",
+                "print(\"Packed\"",
+                "Print(\"Packed\")"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Inspect the paired punctuation",
+              "text": "The supplied line already has both quotation marks around Packed. Its opening parenthesis has no matching closing parenthesis."
+            },
+            {
+              "title": "Complete the function call",
+              "text": "Add the closing parenthesis and keep lowercase print and the quoted message.",
+              "code": "print(\"Packed\")"
+            }
+          ],
+          "model": "print(\"Packed\")",
+          "rubric": [
+            "[1] print(\"Packed\") or print('Packed'). Keep the message quoted and the function name lowercase."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pc3b9b5a9",
+      "number": 24,
+      "label": "Practice 24",
+      "title": "Debug and trace a subroutine",
+      "marks": 5,
+      "topics": [
+        "W3-L2",
+        "W5-L1",
+        "W3-L1",
+        "W2-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "The main program sets score to 2, calls AddBadge once, outputs score, and then ends. AddBadge should add 2 to the current score. Its faulty flowchart is shown."
+        },
+        {
+          "type": "diagram",
+          "nodes": [
+            {
+              "id": "s",
+              "label": "AddBadge",
+              "shape": "terminator"
+            },
+            {
+              "id": "p",
+              "label": "score <- 2",
+              "shape": "process"
+            },
+            {
+              "id": "r",
+              "label": "Return",
+              "shape": "terminator"
+            }
+          ],
+          "edges": [
+            {
+              "from": "s",
+              "to": "p"
+            },
+            {
+              "from": "p",
+              "to": "r"
+            }
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Explain the fault in the process box and write the instruction that adds 2 to score.",
+          "marks": 2,
+          "blocks": [],
+          "hint": "Compare setting a fixed value with calculating from the current value. The correction must retain the old score in its calculation.",
+          "widgets": [
+            {
+              "id": "fault",
+              "type": "choice",
+              "label": "Choose the explanation of the fault",
+              "options": [
+                "The instruction always sets score to 2 instead of adding 2",
+                "The instruction adds 2 twice",
+                "The instruction outputs score instead of storing it"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "correction",
+              "type": "text",
+              "label": "Correct process instruction",
+              "answer": "score <- score + 2",
+              "accept": [
+                "score <- score + 2",
+                "score ← score + 2",
+                "score = score + 2",
+                "score += 2",
+                "score <- 2 + score",
+                "score ← 2 + score",
+                "score = 2 + score",
+                "score <- (score + 2)",
+                "score = (score + 2)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the corrected assignment"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Explain the fixed assignment",
+              "text": "score <- 2 replaces the current score with 2 every time. It does not use the previous score, so it cannot increase that score by 2."
+            },
+            {
+              "title": "Use the old value in the update",
+              "text": "The right side must calculate the current score plus 2 before storing the result back in score.",
+              "code": "score <- score + 2"
+            }
+          ],
+          "model": "The instruction sets score to 2 instead of adding 2 to its current value. Replace it with score <- score + 2.",
+          "rubric": [
+            "Explains that score is set/reset to 2 rather than increased by 2. (1 mark).",
+            "Corrects the process to score <- score + 2; accept score = score + 2 or score += 2 if the meaning is clear. Award independently of the explanation. (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "The subroutine is now corrected to add 2. State the value of score after the call.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Use the corrected behaviour stated in this part and the starting score in the main program.",
+          "widgets": [
+            {
+              "id": "scoreAfter",
+              "type": "text",
+              "label": "Score after the corrected call",
+              "answer": "4",
+              "accept": [
+                "4"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the independent starting information",
+              "text": "The main program starts score at 2. This part explicitly says the subroutine has been corrected to add 2, regardless of your earlier correction."
+            },
+            {
+              "title": "Apply one call",
+              "text": "The main program calls the subroutine once, so score changes from 2 to 2 + 2 = 4. There is no second call to add another 2."
+            }
+          ],
+          "model": "4",
+          "rubric": [
+            "4. Use the stated corrected behaviour independently of the answer to part a. (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State which main-program instruction runs immediately after the subroutine returns.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Find the instruction immediately after the call in the main program.",
+          "widgets": [
+            {
+              "id": "next",
+              "type": "choice",
+              "label": "Choose the instruction executed after Return",
+              "options": [
+                "Set score to 2 again",
+                "Call AddBadge again",
+                "Output score",
+                "End before producing output"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Use the return rule",
+              "text": "After a subroutine finishes, execution continues just after the call that started it. It does not restart the main program."
+            },
+            {
+              "title": "Read the given sequence",
+              "text": "The stated sequence is set score, call AddBadge, output score, then end. The instruction immediately after the call is therefore the output instruction."
+            }
+          ],
+          "model": "The instruction that outputs score.",
+          "rubric": [
+            "Outputs/displays score; accept OUTPUT score. Do not accept the start of the program. (1 mark)."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "For this part only, score is 5. State whether the expression is True or False.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "(score >= 3) AND (score <= 6)"
+            }
+          ],
+          "hint": "Use the fresh value supplied for this part, then check both comparisons before applying AND.",
+          "widgets": [
+            {
+              "id": "range",
+              "type": "choice",
+              "label": "(score >= 3) AND (score <= 6)",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Evaluate each comparison with 5",
+              "text": "For this part, score is 5. The comparison 5 >= 3 is True, and 5 <= 6 is also True."
+            },
+            {
+              "title": "Combine with AND",
+              "text": "AND is True only when both comparisons are True. Both are, so the complete expression is True."
+            }
+          ],
+          "model": "True",
+          "rubric": [
+            "True. Both comparisons are True. Only the final truth value is required. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g7-p8f7025be",
+      "number": 25,
+      "label": "Practice 25",
+      "title": "Read, fix and trace Python",
+      "marks": 5,
+      "topics": [
+        "W4-L1",
+        "W4-L2",
+        "W5-L1",
+        "W5-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Rewrite the line to correct its syntax error.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "print(\"Go\""
+            }
+          ],
+          "hint": "The string is complete. Now check the pair of parentheses around print’s argument.",
+          "widgets": [
+            {
+              "id": "fixedLine",
+              "type": "text",
+              "label": "Corrected Python line",
+              "answer": "print(\"Go\")",
+              "accept": [
+                "print(\"Go\")",
+                "print('Go')"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type the complete corrected line"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check the quotation marks",
+              "text": "The word Go already has matching quotation marks, so the string itself is complete."
+            },
+            {
+              "title": "Close the function call",
+              "text": "The opening parenthesis after print needs a closing parenthesis. Adding it makes a valid statement.",
+              "code": "print(\"Go\")"
+            }
+          ],
+          "model": "print(\"Go\")",
+          "rubric": [
+            "print(\"Go\") or print('Go') with matching quotation marks and parentheses (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State the output of this program.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "price = 5\nquantity = 2\nprint(price * quantity)"
+            }
+          ],
+          "hint": "Substitute the assigned numbers into the expression inside print.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Program output",
+              "answer": "10",
+              "accept": [
+                "10"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the two stored numbers",
+              "text": "price holds 5 and quantity holds 2. The expression uses these values, not the names as text."
+            },
+            {
+              "title": "Perform the requested operation",
+              "text": "The * operator multiplies, so print displays 5 * 2 = 10."
+            }
+          ],
+          "model": "10",
+          "rubric": [
+            "10 (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State the data type of \"14\".",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look at how the value is written, not just the characters inside it.",
+          "widgets": [
+            {
+              "id": "type",
+              "type": "choice",
+              "label": "Data type of \"14\"",
+              "options": [
+                "Integer",
+                "Float / real",
+                "String",
+                "Boolean"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Inspect the quotation marks",
+              "text": "The characters 1 and 4 are surrounded by quotation marks. Python treats quoted content as text."
+            },
+            {
+              "title": "Name the type",
+              "text": "The value is therefore a string. The unquoted value 14 would instead be an integer."
+            }
+          ],
+          "model": "String.",
+          "rubric": [
+            "String; accept str as the type name (1 mark)."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "The user types Robotics when this statement runs. State the value stored in club.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "club = input(\"Club: \")"
+            }
+          ],
+          "hint": "Separate the message shown by the program from the response typed by the user.",
+          "widgets": [
+            {
+              "id": "storedText",
+              "type": "choice",
+              "label": "Text stored in club",
+              "options": [
+                "Club:",
+                "club",
+                "Robotics",
+                "input"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify what input returns",
+              "text": "The user’s entered response is Robotics. input returns that response as text."
+            },
+            {
+              "title": "Follow the assignment",
+              "text": "The returned text is assigned to club, so club stores Robotics rather than the prompt Club:."
+            }
+          ],
+          "model": "Robotics.",
+          "rubric": [
+            "Robotics; accept surrounding quotation marks (1 mark)."
+          ]
+        },
+        {
+          "id": "e",
+          "prompt": "State the message displayed before the user types their club.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Find the prompt string inside the input call in part d.",
+          "widgets": [
+            {
+              "id": "prompt",
+              "type": "choice",
+              "label": "Message displayed first",
+              "options": [
+                "Robotics",
+                "Club:",
+                "club",
+                "input"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Locate the prompt",
+              "text": "The argument \"Club: \" supplies the message to display before waiting for a response."
+            },
+            {
+              "title": "Distinguish the two stages",
+              "text": "Club: appears first. Robotics is what the user later types, so it is not the initial message."
+            }
+          ],
+          "model": "Club:",
+          "rubric": [
+            "Club:; accept omission of the colon or final space and accept quotation marks (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pc5b9b8cf",
+      "number": 26,
+      "label": "Practice 26",
+      "title": "Tracing a flowchart",
+      "marks": 5,
+      "topics": [
+        "W1-L1",
+        "W1-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "These instructions appear in this order in a flowchart. The arrow <- means assign a value."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "Instruction"
+          ],
+          "rows": [
+            [
+              "1",
+              "points <- 4"
+            ],
+            [
+              "2",
+              "points <- points + 3"
+            ],
+            [
+              "3",
+              "points <- points - 2"
+            ],
+            [
+              "4",
+              "OUTPUT points"
+            ]
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the trace table with the value of points after each stated step.",
+          "marks": 3,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "After step",
+                "Value of points"
+              ],
+              "rows": [
+                [
+                  "1",
+                  ""
+                ],
+                [
+                  "2",
+                  ""
+                ],
+                [
+                  "3",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Carry the stored value from one row to the next. Work out each right-hand side before replacing points.",
+          "widgets": [
+            {
+              "id": "step1",
+              "type": "text",
+              "label": "Value of points after step 1",
+              "answer": "4",
+              "accept": [
+                "4"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            },
+            {
+              "id": "step2",
+              "type": "text",
+              "label": "Value of points after step 2",
+              "answer": "7",
+              "accept": [
+                "7"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            },
+            {
+              "id": "step3",
+              "type": "text",
+              "label": "Value of points after step 3",
+              "answer": "5",
+              "accept": [
+                "5"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Start with the assignment",
+              "text": "Step 1 stores 4 in points. There is no earlier value to add to it.",
+              "code": "points <- 4"
+            },
+            {
+              "title": "Use the current value",
+              "text": "Step 2 adds 3 to the current 4, giving 7. Step 3 then subtracts 2 from that new 7, giving 5.",
+              "code": "4 -> 7 -> 5"
+            }
+          ],
+          "model": "After step 1: 4. After step 2: 7. After step 3: 5.",
+          "rubric": [
+            "Step 1 value is 4. (1 mark).",
+            "Step 2 value is 7; allow the candidate's step 1 value plus 3. (1 mark).",
+            "Step 3 value is 5; allow the candidate's step 2 value minus 2. (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State what a connecting arrow between flowchart symbols shows.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about how a reader knows which instruction comes next.",
+          "widgets": [
+            {
+              "id": "arrow",
+              "type": "choice",
+              "label": "Choose what a connecting arrow shows",
+              "options": [
+                "The order and direction in which instructions run",
+                "The amount of time an instruction takes",
+                "The data type of every variable"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Follow control through the chart",
+              "text": "The shapes show what happens. The connecting arrows link those actions into an execution route."
+            },
+            {
+              "title": "Describe the order",
+              "text": "Following an arrow tells the reader which symbol to process next. It shows direction or sequence, not timing or data type."
+            }
+          ],
+          "model": "The direction or order in which the instructions are followed.",
+          "rubric": [
+            "Shows the direction or sequence of execution between symbols; accept flow of control. (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State the value output at step 4.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Use the latest stored value at the moment OUTPUT runs.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Value output at step 4",
+              "answer": "5",
+              "accept": [
+                "5"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find the last update",
+              "text": "The first three steps leave points holding 5: start at 4, add 3, then subtract 2."
+            },
+            {
+              "title": "Read without changing",
+              "text": "OUTPUT points displays the value already in points. It does not perform another calculation, so it displays 5."
+            }
+          ],
+          "model": "5",
+          "rubric": [
+            "5; allow the candidate's value after step 3. Do not penalise a previous arithmetic error again. (1 mark)."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "trace-flowchart",
+        "steps": [
+          "points <- 4",
+          "points <- points + 3",
+          "points <- points - 2",
+          "OUTPUT points"
+        ]
+      },
+      "kind": "structured"
+    },
+    {
+      "id": "g7-pc6b9ba62",
+      "number": 27,
+      "label": "Practice 27",
+      "title": "Comparisons and Boolean logic",
+      "marks": 5,
+      "topics": [
+        "W2-L1",
+        "W2-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "For every part of this question, height has the value 140 and has_ticket has the Boolean value False. Each expression is evaluated independently."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the table with True or False.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Comparison",
+                "True or False"
+              ],
+              "rows": [
+                [
+                  "height >= 140",
+                  ""
+                ],
+                [
+                  "height < 140",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Compare 140 with the boundary in each row. Check whether equality is included.",
+          "widgets": [
+            {
+              "id": "atleast",
+              "type": "choice",
+              "label": "height >= 140",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "below",
+              "type": "choice",
+              "label": "height < 140",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Substitute the stated value",
+              "text": "Replace height with 140 in both comparisons. Each row is independent."
+            },
+            {
+              "title": "Check the boundary",
+              "text": "140 >= 140 is True because >= includes equality. 140 < 140 is False because a number is not smaller than itself."
+            }
+          ],
+          "model": "height >= 140 is True; height < 140 is False.",
+          "rubric": [
+            "height >= 140: True. (1 mark).",
+            "height < 140: False. (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Complete the table with True or False.",
+          "marks": 3,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Expression",
+                "True or False"
+              ],
+              "rows": [
+                [
+                  "(height >= 140) AND has_ticket",
+                  ""
+                ],
+                [
+                  "(height >= 140) OR has_ticket",
+                  ""
+                ],
+                [
+                  "NOT has_ticket",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Evaluate the comparison in brackets first, then apply each Boolean operator.",
+          "widgets": [
+            {
+              "id": "and",
+              "type": "choice",
+              "label": "(height >= 140) AND has_ticket",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            },
+            {
+              "id": "or",
+              "type": "choice",
+              "label": "(height >= 140) OR has_ticket",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "not",
+              "type": "choice",
+              "label": "NOT has_ticket",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find the two truth values",
+              "text": "The comparison height >= 140 is True, while has_ticket is given as False. Use those same values in each independent row."
+            },
+            {
+              "title": "Apply AND and OR",
+              "text": "True AND False is False because AND needs both values to be True. True OR False is True because OR needs at least one True value."
+            },
+            {
+              "title": "Apply NOT separately",
+              "text": "NOT reverses the value of has_ticket. Since has_ticket is False, NOT has_ticket is True."
+            }
+          ],
+          "model": "False; True; True, in row order.",
+          "rubric": [
+            "(height >= 140) AND has_ticket: False. (1 mark).",
+            "(height >= 140) OR has_ticket: True. (1 mark).",
+            "NOT has_ticket: True. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g7-p86701793",
+      "number": 28,
+      "label": "Practice 28",
+      "title": "Return to the caller",
+      "marks": 1,
+      "topics": [
+        "W3-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "The main program calls RingBell, then outputs \"Done\", then stops. What happens immediately after RingBell returns?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Locate the instruction that follows the call in the main program.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "The main program starts again",
+                "RingBell runs again automatically",
+                "The program stops without output",
+                "The main program outputs \"Done\""
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Recall where a return goes",
+              "text": "A return resumes the program at the instruction immediately after the subroutine call."
+            },
+            {
+              "title": "Apply the stated order",
+              "text": "The instruction after the RingBell call outputs \"Done\". Stopping occurs after that output, not before it."
+            }
+          ],
+          "model": "D. The main program outputs \"Done\".",
+          "rubric": [
+            "D — The main program outputs \"Done\" (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc2b9b416",
+      "number": 29,
+      "label": "Practice 29",
+      "title": "Construct a flowchart",
+      "marks": 5,
+      "topics": [
+        "W1-L2",
+        "W2-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A drinks dispenser reads a whole number called cups. When cups is at least 3, it outputs \"Group order\". Otherwise, it outputs \"Small order\". The program then ends."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Draw the flowchart. Include Start, an input for cups, one decision, the two output messages and Stop. Use suitable symbols and arrows. Label the decision branches Yes and No.",
+          "marks": 5,
+          "blocks": [],
+          "hint": "Use the checklist to include every symbol. Think about which message belongs to the True branch at the boundary value.",
+          "widgets": [
+            {
+              "id": "terminators",
+              "type": "choice",
+              "label": "Choose the shape for Start and Stop; the diagram connects the complete route",
+              "options": [
+                "Oval",
+                "Rectangle",
+                "Diamond",
+                "Parallelogram"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "inputShape",
+              "type": "choice",
+              "label": "Choose the shape for INPUT cups",
+              "options": [
+                "Oval",
+                "Rectangle",
+                "Diamond",
+                "Parallelogram"
+              ],
+              "answer": 3,
+              "marks": 1
+            },
+            {
+              "id": "condition",
+              "type": "text",
+              "label": "Decision condition (use Yes for Group order)",
+              "answer": "cups >= 3",
+              "accept": [
+                "cups >= 3",
+                "cups > 2",
+                "3 <= cups",
+                "2 < cups",
+                "(cups >= 3)",
+                "(cups > 2)",
+                "(3 <= cups)",
+                "(2 < cups)",
+                "cups ≥ 3",
+                "3 ≤ cups",
+                "(cups ≥ 3)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Type a comparison using cups"
+            },
+            {
+              "id": "branches",
+              "type": "choice",
+              "label": "Choose the destinations of the labelled decision branches",
+              "options": [
+                "Yes → Small order; No → Group order",
+                "Yes → Group order; No → Small order",
+                "Yes → Group order; No → Group order"
+              ],
+              "answer": 1,
+              "marks": 1
+            },
+            {
+              "id": "outputShape",
+              "type": "choice",
+              "label": "Choose the shape for both output messages",
+              "options": [
+                "Oval",
+                "Rectangle",
+                "Diamond",
+                "Parallelogram"
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Start by reading the data",
+              "text": "Use an oval for Start, then a parallelogram for INPUT cups. Reading the value must happen before the decision uses it."
+            },
+            {
+              "title": "Test the stated boundary",
+              "text": "At least 3 includes 3, so cups >= 3 is a suitable decision. For the stated whole-number input, cups > 2 is equivalent. Put the comparison in a decision diamond."
+            },
+            {
+              "title": "Route the two possible results",
+              "text": "For this guided construction, Yes goes to OUTPUT \"Group order\" and No goes to OUTPUT \"Small order\". Both messages belong in output parallelograms."
+            },
+            {
+              "title": "Complete the flow",
+              "text": "Connect both output routes to a Stop oval with directional arrows. A paper solution may use an inverse condition if its branch destinations are also reversed, as the full rubric explains."
+            }
+          ],
+          "model": "Start -> INPUT cups -> decision cups >= 3. The Yes/True branch leads to OUTPUT \"Group order\"; the No/False branch leads to OUTPUT \"Small order\". Both branches lead to Stop. Use terminators for Start and Stop, parallelograms for input and outputs, a diamond for the decision and directional arrows.",
+          "rubric": [
+            "Includes Start and Stop terminators and a complete directional route from Start to Stop; allow two separate Stop terminators. (1 mark).",
+            "Reads cups using an input parallelogram. (1 mark).",
+            "Uses a decision diamond containing cups >= 3 or an equivalent comparison, such as cups > 2 for the stated whole-number input. (1 mark).",
+            "Labels the two decision routes Yes/No or True/False and routes them to the appropriate outputs. If the candidate uses the inverse comparison, allow inverted branch destinations. (1 mark).",
+            "Includes both exact messages in output parallelograms. Assess correct route placement under the preceding routing mark, so an otherwise correct output is not penalised twice. (1 mark)."
+          ]
+        }
+      ],
+      "visual": {
+        "type": "flowchart-builder",
+        "variable": "cups",
+        "condition": "cups >= 3",
+        "yes": "Group order",
+        "no": "Small order"
+      },
+      "kind": "applied"
+    },
+    {
+      "id": "g7-pc4bbf5d3",
+      "number": 30,
+      "label": "Practice 30",
+      "title": "Understand debugging",
+      "marks": 1,
+      "topics": [
+        "W3-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What does debugging a program mean?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about the work done after a test reveals a problem in a program.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Choose one answer",
+              "options": [
+                "Writing the first draft of a program.",
+                "Finding and correcting errors in a program.",
+                "Adding comments to explain a program.",
+                "Saving a program with a new filename."
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Recognise the purpose",
+              "text": "A program may have an error in its syntax or in what its instructions do. Debugging is the work of finding the cause."
+            },
+            {
+              "title": "Include the repair",
+              "text": "Debugging also involves correcting the error and checking the change. Writing comments or saving a new filename does not itself fix a fault."
+            }
+          ],
+          "model": "B. Finding and correcting errors in a program.\nDebugging means locating and correcting errors.",
+          "rubric": [
+            "B — Finding and correcting errors in a program. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g7-pc7b9bbf5",
+      "number": 31,
+      "label": "Practice 31",
+      "title": "Recognising and tracing subroutines",
+      "marks": 5,
+      "topics": [
+        "W3-L1",
+        "W3-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A robot follows this sequence of actions."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Step",
+            "Action"
+          ],
+          "rows": [
+            [
+              "1",
+              "Move forward"
+            ],
+            [
+              "2",
+              "Flash a light"
+            ],
+            [
+              "3",
+              "Move forward"
+            ],
+            [
+              "4",
+              "Flash a light"
+            ]
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Write the two-action pattern that repeats.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Compare steps 1–2 with steps 3–4, keeping the actions in their original order.",
+          "widgets": [
+            {
+              "id": "pattern",
+              "type": "order",
+              "label": "Arrange the two actions in the repeating pattern",
+              "items": [
+                "Flash a light",
+                "Move forward"
+              ],
+              "answer": [
+                1,
+                0
+              ],
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find matching blocks",
+              "text": "Steps 1 and 3 both say Move forward. Steps 2 and 4 both say Flash a light, so the same two-action block appears twice."
+            },
+            {
+              "title": "Preserve the action order",
+              "text": "The pattern begins with Move forward and then Flash a light. Reversing the two actions would describe a different sequence."
+            }
+          ],
+          "model": "Move forward, flash a light.",
+          "rubric": [
+            "Move forward followed by flash a light. Accept steps 1 to 2 or 3 to 4. (1 mark)."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Explain one benefit of putting the repeated sequence in a subroutine.",
+          "marks": 2,
+          "blocks": [],
+          "hint": "Choose one benefit, then explain how calling a shared set of instructions produces that benefit.",
+          "widgets": [
+            {
+              "id": "benefit",
+              "type": "choice",
+              "label": "Choose the benefit to explain",
+              "options": [
+                "Each call creates a separate copy that must be edited",
+                "The repeated instructions can be stored in one shared place",
+                "The repeated actions only happen on the first call"
+              ],
+              "answer": 1,
+              "marks": 1
+            },
+            {
+              "id": "explanation",
+              "type": "choice",
+              "label": "Choose the explanation of that benefit",
+              "options": [
+                "The program stops after the first call",
+                "Every call keeps the old instructions forever",
+                "One change to the shared instructions applies to every call"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the shared definition",
+              "text": "A subroutine stores the repeated instructions once. The main program uses its name whenever those instructions are needed."
+            },
+            {
+              "title": "Explain the maintenance effect",
+              "text": "A change to that one definition is used by every later call. This avoids finding and editing separate copies, which explains the maintenance benefit."
+            }
+          ],
+          "model": "The instructions are stored once, so a change to that subroutine updates every place where it is called.",
+          "rubric": [
+            "Identifies a valid benefit, such as reduced duplication, easier maintenance or clearer main program. (1 mark).",
+            "Explains the benefit: for example, a change is made once and applies to every call, or the descriptive call makes the main program easier to follow. Do not award both marks for two unexplained benefits. (1 mark)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Complete the table for this separate program.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "text",
+              "text": "The light starts OFF. The subroutine Signal turns the light ON, plays one tone, then turns the light OFF. The main program calls Signal twice."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Result",
+                "Answer"
+              ],
+              "rows": [
+                [
+                  "Number of tones played",
+                  ""
+                ],
+                [
+                  "Final light state",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Trace one complete call before thinking about the second call. Check the last action in the subroutine.",
+          "widgets": [
+            {
+              "id": "tones",
+              "type": "text",
+              "label": "Number of tones played",
+              "answer": "2",
+              "accept": [
+                "2"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a value"
+            },
+            {
+              "id": "light",
+              "type": "choice",
+              "label": "Final light state",
+              "options": [
+                "ON",
+                "OFF"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Trace one call",
+              "text": "Signal turns the light ON, plays one tone, then turns the light OFF. One complete call therefore adds one tone and leaves the light OFF."
+            },
+            {
+              "title": "Repeat the whole call",
+              "text": "The main program calls Signal twice, so one tone is played on each call: two tones altogether. The final action of the second call still turns the light OFF."
+            }
+          ],
+          "model": "The tone plays twice. The light finishes OFF.",
+          "rubric": [
+            "Number of tones: 2. (1 mark).",
+            "Final light state: OFF. (1 mark)."
+          ]
+        }
+      ],
+      "kind": "structured"
+    }
+  ],
+  "animations": [
+    {
+      "id": "g7-trace",
+      "title": "Follow the stored value",
+      "topic": "W1-L1",
+      "caption": "Trace four instructions: store, update, update, display.",
+      "frames": [
+        {
+          "title": "Store the starting value",
+          "lines": [
+            "points <- 4",
+            "points = 4"
+          ],
+          "note": "Assignment stores the right-hand value."
+        },
+        {
+          "title": "Add to the current value",
+          "lines": [
+            "points <- points + 3",
+            "4 + 3 = 7",
+            "points = 7"
+          ],
+          "note": "Calculate first, then replace the stored value."
+        },
+        {
+          "title": "Use the updated value",
+          "lines": [
+            "points <- points - 2",
+            "7 - 2 = 5",
+            "points = 5"
+          ],
+          "note": "The subtraction uses 7, not the old starting value."
+        },
+        {
+          "title": "Display without changing",
+          "lines": [
+            "OUTPUT points",
+            "Screen: 5"
+          ],
+          "note": "Output reads the current value. points stays 5."
+        }
+      ]
+    },
+    {
+      "id": "g7-logic",
+      "title": "Make sense of AND, OR and NOT",
+      "topic": "W2-L2",
+      "caption": "Evaluate comparisons first, then apply the rule for each Boolean operator.",
+      "frames": [
+        {
+          "title": "Find the truth values",
+          "lines": [
+            "height = 140",
+            "height >= 140 is True",
+            "has_ticket is False"
+          ],
+          "note": "The boundary is included by >=."
+        },
+        {
+          "title": "AND needs both",
+          "lines": [
+            "True AND False",
+            "Result: False"
+          ],
+          "note": "One False input prevents both inputs being True."
+        },
+        {
+          "title": "OR needs at least one",
+          "lines": [
+            "True OR False",
+            "Result: True"
+          ],
+          "note": "A single True input is enough for OR."
+        },
+        {
+          "title": "NOT reverses one value",
+          "lines": [
+            "NOT False",
+            "Result: True"
+          ],
+          "note": "NOT changes one truth value to its opposite."
+        },
+        {
+          "title": "Check the rules again",
+          "lines": [
+            "True AND True = True",
+            "False OR False = False",
+            "NOT True = False"
+          ],
+          "note": "Each line is an independent Boolean expression."
+        }
+      ]
+    },
+    {
+      "id": "g7-input-update",
+      "title": "Read a name, update a total",
+      "topic": "W5-L2",
+      "caption": "Follow a text input and a calculation, then check the displayed results.",
+      "frames": [
+        {
+          "title": "Read the visitor’s text",
+          "lines": [
+            "name = input(\"Name: \")",
+            "User enters Lina",
+            "name stores \"Lina\""
+          ],
+          "note": "The prompt and the entered response have different roles."
+        },
+        {
+          "title": "Calculate the badge cost",
+          "lines": [
+            "total = 2 * 4",
+            "total = 8"
+          ],
+          "note": "Python uses * for multiplication."
+        },
+        {
+          "title": "Add the bag fee",
+          "lines": [
+            "total = total + 1",
+            "8 + 1 = 9",
+            "total = 9"
+          ],
+          "note": "The right side uses the old total before the update."
+        },
+        {
+          "title": "Display the stored name",
+          "lines": [
+            "print(name)",
+            "Screen: Lina"
+          ],
+          "note": "An unquoted variable name uses its stored value."
+        },
+        {
+          "title": "Display the final total",
+          "lines": [
+            "print(total)",
+            "Screen: 9"
+          ],
+          "note": "The second print starts the result on the next line."
+        },
+        {
+          "title": "Read the two result lines",
+          "lines": [
+            "Lina",
+            "9"
+          ],
+          "note": "The entered name appears first, followed by the updated total."
+        }
+      ]
+    }
+  ],
+  "bankVersion": 2,
+  "challenge": {
+    "minutes": 60,
+    "marks": 50
+  }
+}

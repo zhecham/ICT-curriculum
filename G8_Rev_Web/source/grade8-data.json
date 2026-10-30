@@ -1,0 +1,3662 @@
+{
+  "grade": 8,
+  "title": "Grade 8 Revision Lab",
+  "tagline": "Build confidence with varied practice, clear explanations and a fresh timed challenge.",
+  "topics": [
+    {
+      "id": "W1-L1",
+      "title": "Pseudocode, INPUT and OUTPUT",
+      "summary": "Plan an algorithm in clear steps. INPUT receives data; OUTPUT displays a value or a quoted message.",
+      "tips": [
+        "Read the variable immediately after INPUT to find where the user's data is stored.",
+        "OUTPUT Total displays the value in Total. OUTPUT \"Total\" displays the word Total.",
+        "Pseudocode helps you plan, but its instructions do not run directly as Python."
+      ]
+    },
+    {
+      "id": "W1-L2",
+      "title": "Variables, assignment and arithmetic",
+      "summary": "Work out the right-hand expression, then store the result in the variable on the left of <-.",
+      "tips": [
+        "Use the latest stored value whenever a variable appears on the right.",
+        "Multiplication happens before addition unless brackets change the order.",
+        "In a trace table, record the value after the named instruction has finished."
+      ]
+    },
+    {
+      "id": "W2-L1",
+      "title": "IF, THEN and ELSE",
+      "summary": "A condition selects a branch. ELSE runs only when the IF condition is false.",
+      "tips": [
+        "The equal sign in >= or <= includes the boundary value.",
+        "With no ELSE, a false condition skips the IF block and execution continues after ENDIF.",
+        "Trace separate inputs as fresh runs; do not carry a previous run's values into the next."
+      ]
+    },
+    {
+      "id": "W2-L2",
+      "title": "ELSEIF and nested decisions",
+      "summary": "An ELSEIF chain chooses the first true branch. A nested decision is reached only through its outer branch.",
+      "tips": [
+        "Check conditions from top to bottom and stop after selecting one branch.",
+        "Identify which ELSE belongs to which IF by following indentation and ENDIF.",
+        "For a nested membership test, check membership before considering the inner limit."
+      ]
+    },
+    {
+      "id": "W3-L1",
+      "title": "Boolean operators and precedence",
+      "summary": "AND needs both conditions; OR needs at least one; NOT reverses a Boolean value.",
+      "tips": [
+        "Without brackets, apply NOT first, AND second and OR last.",
+        "TRUE OR TRUE is still TRUE: OR includes the case where both sides are true.",
+        "Reduce one part of a compound expression at a time and rewrite the remaining expression."
+      ]
+    },
+    {
+      "id": "W3-L2",
+      "title": "Linear search",
+      "summary": "Compare the target with items in order, stopping at a match or at the end of the list.",
+      "tips": [
+        "Begin at the first item when the question says the search starts there.",
+        "Count comparisons, including the comparison that finds a match.",
+        "An unsuccessful search checks every item; the values do not need to be sorted."
+      ]
+    },
+    {
+      "id": "W4-L1",
+      "title": "Python if and if-else",
+      "summary": "Use lowercase if, a condition, a colon and indented branch instructions.",
+      "tips": [
+        "Use == for an equality comparison in Python; = assigns a value.",
+        "Indentation identifies the statements in a branch and affects how the program runs.",
+        "Check the boundary itself: temperature < 20 is false when temperature is 20."
+      ]
+    },
+    {
+      "id": "W4-L2",
+      "title": "Python elif and categories",
+      "summary": "Use elif to test another condition after earlier conditions in the same chain were false.",
+      "tips": [
+        "A final else has no condition and handles all remaining inputs.",
+        "In descending thresholds, an earlier branch has already removed the higher category.",
+        "Check a value just below, exactly on and just above each threshold."
+      ]
+    },
+    {
+      "id": "W5-L1",
+      "title": "Python Boolean logic and errors",
+      "summary": "Use and, or and not to combine flags, and keep assignment distinct from comparison.",
+      "tips": [
+        "Translate both into and; translate at least one or either into or.",
+        "not flag produces the opposite Boolean value without changing flag itself.",
+        "When debugging, test a case where only one flag is true to distinguish and from or."
+      ]
+    },
+    {
+      "id": "W5-L2",
+      "title": "Pseudocode to Python",
+      "summary": "Keep the algorithm's behaviour while changing its notation into valid Python.",
+      "tips": [
+        "Translate pseudocode <- into Python = for assignment.",
+        "Translate OUTPUT value into print(value), preserving quoted messages as strings.",
+        "Python uses a colon and indentation instead of THEN and ENDIF."
+      ]
+    },
+    {
+      "id": "W6-L1",
+      "title": "Data types and flags",
+      "summary": "A Boolean stores True or False. A flag gives one of these values a meaning in the program.",
+      "tips": [
+        "False is a Boolean value; \"False\" is text because it has quotation marks.",
+        "A comparison produces a Boolean result, even when it compares two numbers.",
+        "A flag keeps its current value unless an executed assignment changes it."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "g8-p3b7d0939",
+      "number": 1,
+      "label": "Practice 01",
+      "title": "Distinguish a Boolean literal from other data types",
+      "marks": 1,
+      "topics": [
+        "W6-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which is a Boolean value in Python?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look carefully at quotation marks and the spelling of Python Boolean values.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "\"False\"",
+                "0.0",
+                "False",
+                "\"0\""
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the literal type",
+              "text": "Python's Boolean literals are True and False with initial capital letters and no quotation marks."
+            },
+            {
+              "title": "Eliminate other types",
+              "text": "Quoted values are strings, even when they spell False. A decimal such as 0.0 is a float, not a Boolean literal."
+            }
+          ],
+          "model": "C. False\nFalse without quotation marks is a Boolean literal. Quoted text is a string; 0.0 is a float.",
+          "rubric": [
+            "[1] Select C: False"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p387d0480",
+      "number": 2,
+      "label": "Practice 02",
+      "title": "Logic and variable values",
+      "marks": 5,
+      "topics": [
+        "W3-L1",
+        "W1-L2",
+        "W6-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Evaluate each Boolean expression. Write TRUE or FALSE.",
+          "marks": 3,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Expression",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "TRUE AND FALSE",
+                  ""
+                ],
+                [
+                  "NOT FALSE",
+                  ""
+                ],
+                [
+                  "TRUE OR FALSE AND FALSE",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Evaluate NOT before AND, and AND before OR.",
+          "widgets": [
+            {
+              "id": "and",
+              "type": "choice",
+              "label": "TRUE AND FALSE",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            },
+            {
+              "id": "not",
+              "type": "choice",
+              "label": "NOT FALSE",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            },
+            {
+              "id": "precedence",
+              "type": "choice",
+              "label": "TRUE OR FALSE AND FALSE",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Apply the basic rules",
+              "text": "AND needs both operands to be true, so TRUE AND FALSE is FALSE. NOT reverses a value, so NOT FALSE is TRUE."
+            },
+            {
+              "title": "Reduce the higher-priority part",
+              "text": "In the third expression, evaluate FALSE AND FALSE before combining it with OR.",
+              "code": "TRUE OR (FALSE AND FALSE)\nTRUE OR FALSE"
+            },
+            {
+              "title": "Finish the remaining OR",
+              "text": "OR needs at least one true operand. Its left operand is already TRUE, so the complete third expression is TRUE."
+            }
+          ],
+          "model": "FALSE; TRUE; TRUE.",
+          "rubric": [
+            "[1] FALSE for TRUE AND FALSE.",
+            "[1] TRUE for NOT FALSE.",
+            "[1] TRUE for TRUE OR FALSE AND FALSE; AND is evaluated before OR."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State the value output by this pseudocode.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "A <- 5\nB <- A + 2\nOUTPUT B"
+            }
+          ],
+          "hint": "Use A's stored value when evaluating the right side of the next assignment.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Value output",
+              "answer": "7",
+              "accept": [
+                "7"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Store the first value",
+              "text": "The assignment A <- 5 stores 5 in A."
+            },
+            {
+              "title": "Use the stored value",
+              "text": "B receives the result of A + 2. OUTPUT B then displays that result.",
+              "code": "B <- 5 + 2\nOUTPUT B  // 7"
+            }
+          ],
+          "model": "7",
+          "rubric": [
+            "[1] 7: B receives 5 + 2."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State the data type of the result of the comparison A > 3.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "The question asks for a type, not whether this particular comparison is true.",
+          "widgets": [
+            {
+              "id": "data-type",
+              "type": "choice",
+              "label": "Data type of the comparison result",
+              "options": [
+                "Integer",
+                "String",
+                "Boolean",
+                "Float"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the operation",
+              "text": "A comparison tests a condition rather than calculating another ordinary numeric value."
+            },
+            {
+              "title": "Name the possible result type",
+              "text": "Its result is either true or false. The name of the data type with those two values is Boolean; True by itself would name a value rather than a type."
+            }
+          ],
+          "model": "Boolean",
+          "rubric": [
+            "[1] Boolean / bool. Do not award for True or False alone because the question asks for the data type."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p7fc6b254",
+      "number": 3,
+      "label": "Practice 03",
+      "title": "Translate a group ticket price",
+      "marks": 5,
+      "topics": [
+        "W5-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "This pseudocode chooses the price per person for a group. The user enters a valid positive whole number of people."
+        },
+        {
+          "type": "code",
+          "text": "INPUT People\nIF People >= 6 THEN\n    Price <- 3\nELSE\n    Price <- 5\nENDIF\nOUTPUT Price"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the five blanks to translate the pseudocode into Python. The input line and indentation are supplied. Use if and else.",
+          "marks": 5,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "people = int(input())\nif __________________________:\n    __________________________\n__________:\n    __________________________\n______________________________"
+            }
+          ],
+          "hint": "Preserve the group-size boundary and translate each assignment and output statement.",
+          "widgets": [
+            {
+              "id": "condition",
+              "type": "text",
+              "label": "Condition after if",
+              "answer": "people >= 6",
+              "accept": [
+                "people >= 6",
+                "6 <= people",
+                "people > 5",
+                "5 < people",
+                "not (people < 6)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "group-price",
+              "type": "text",
+              "label": "First indented assignment (use price)",
+              "answer": "price = 3",
+              "accept": [
+                "price = 3"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "branch",
+              "type": "text",
+              "label": "Alternative branch keyword",
+              "answer": "else",
+              "accept": [
+                "else"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "regular-price",
+              "type": "text",
+              "label": "Second indented assignment (use price)",
+              "answer": "price = 5",
+              "accept": [
+                "price = 5"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "print",
+              "type": "text",
+              "label": "Final output instruction (use price)",
+              "answer": "print(price)",
+              "accept": [
+                "print(price)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Translate the inclusive group boundary",
+              "text": "A group of exactly six receives the lower price, so keep the inclusive comparison >= in Python. The numeric input line is already supplied.",
+              "code": "if people >= 6:"
+            },
+            {
+              "title": "Translate the selected values",
+              "text": "Use Python = to store price 3 in the true branch and price 5 in the else branch. These are assignments, not comparisons.",
+              "code": "    price = 3\nelse:\n    price = 5"
+            },
+            {
+              "title": "Display the chosen price",
+              "text": "Place print(price) after the selection at the outer indentation level. It displays whichever value the selected branch stored.",
+              "code": "print(price)"
+            },
+            {
+              "title": "Check the boundary pair",
+              "text": "Five people select price 5; six people select price 3. These checks confirm the condition points in the correct direction and includes six."
+            }
+          ],
+          "model": "people = int(input())\nif people >= 6:\n    price = 3\nelse:\n    price = 5\nprint(price)",
+          "rubric": [
+            "[1] people >= 6, or an equivalent comparison for a whole-number count.",
+            "[1] price = 3 in the first indented blank.",
+            "[1] else in the branch-keyword blank; the colon is supplied.",
+            "[1] price = 5 in the second indented blank.",
+            "[1] print(price) after the selection. Accept consistent alternative variable names in a paper answer; assess this output independently of earlier assignment errors."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g8-p3c7acc35",
+      "number": 4,
+      "label": "Practice 04",
+      "title": "Recognise correct Python if syntax",
+      "marks": 1,
+      "topics": [
+        "W4-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which line correctly begins a Python selection that tests whether age is at least 12?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check the language keyword, the meaning of at least, and the line ending.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "if age >= 12:",
+                "IF age >= 12 THEN",
+                "if age = 12:",
+                "if age >= 12"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Translate the condition",
+              "text": "At least 12 includes 12 and every larger value, so the comparison uses >=."
+            },
+            {
+              "title": "Check Python syntax",
+              "text": "Python uses lowercase if and a colon after the condition. THEN belongs to this pseudocode style, not Python.",
+              "code": "if age >= 12:"
+            }
+          ],
+          "model": "A. if age >= 12:\nPython uses lowercase if, a comparison expression and a colon.",
+          "rubric": [
+            "[1] Select A: if age >= 12:"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p68158b76",
+      "number": 5,
+      "label": "Practice 05",
+      "title": "Display the stored nickname",
+      "marks": 1,
+      "topics": [
+        "W1-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Nickname stores the text Comet. Which pseudocode instruction displays that stored text?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "An unquoted name refers to the value in a variable; quoted text is a fixed message.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "OUTPUT \"Nickname\"",
+                "INPUT Nickname",
+                "OUTPUT Nickname",
+                "Nickname <- \"Comet\""
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Choose an output operation",
+              "text": "Displaying a value requires OUTPUT. INPUT receives a new value, while assignment only stores a value."
+            },
+            {
+              "title": "Use the variable rather than its name as text",
+              "text": "OUTPUT Nickname reads the stored value Comet. OUTPUT \"Nickname\" would display the literal word Nickname."
+            }
+          ],
+          "model": "C. OUTPUT Nickname. It displays Comet.",
+          "rubric": [
+            "[1] Select C: OUTPUT Nickname"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p3e7d0df2",
+      "number": 6,
+      "label": "Practice 06",
+      "title": "Using a flag in Python",
+      "marks": 5,
+      "topics": [
+        "W4-L1",
+        "W6-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "This program sets a flag for a heating system."
+        },
+        {
+          "type": "code",
+          "text": "temperature = 18\nheater_on = False\nif temperature < 20:\n    heater_on = True\nelse:\n    heater_on = False\nprint(heater_on)"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "State the output of the program as shown.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Evaluate the condition before deciding which assignment reaches heater_on.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "choice",
+              "label": "Output of the program",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Test the current temperature",
+              "text": "The starting temperature is 18. It satisfies the strict less-than-20 comparison.",
+              "code": "18 < 20 is True"
+            },
+            {
+              "title": "Execute the selected assignment",
+              "text": "The if branch stores True in heater_on. The else branch is skipped, and the final print displays the updated flag.",
+              "code": "heater_on = True\nprint(heater_on)  # True"
+            }
+          ],
+          "model": "True",
+          "rubric": [
+            "[1] True. Accept TRUE when the Boolean value is clear; this part assesses tracing rather than letter case."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "The program is run again with the first line changed to temperature = 20. State the output.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "At the boundary, distinguish < from <=.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "choice",
+              "label": "Output when temperature = 20",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Test equality against a strict comparison",
+              "text": "Twenty is equal to 20, not less than 20. The if condition is therefore false.",
+              "code": "20 < 20 is False"
+            },
+            {
+              "title": "Follow the alternative branch",
+              "text": "The else branch stores False in heater_on. This new run prints False regardless of the earlier run."
+            }
+          ],
+          "model": "False",
+          "rubric": [
+            "[1] False. Accept FALSE when the Boolean value is clear. This fresh run is independent of part (a)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State what indentation shows for the lines inside the if and else branches.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Indentation in Python affects which statements belong to a branch.",
+          "widgets": [
+            {
+              "id": "meaning",
+              "type": "choice",
+              "label": "What indentation shows",
+              "options": [
+                "It makes every instruction run twice.",
+                "It converts the flag into a string.",
+                "It identifies the instructions belonging to each branch or block.",
+                "It is optional decoration with no effect on execution."
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the block structure",
+              "text": "The line indented beneath if belongs to its true branch, and the line indented beneath else belongs to its alternative branch."
+            },
+            {
+              "title": "Explain its effect",
+              "text": "Python uses indentation to determine the branch membership of statements. It controls the program structure, not just its appearance."
+            }
+          ],
+          "model": "It shows which instructions belong to each branch / block.",
+          "rubric": [
+            "[1] Identifies the instructions belonging to the selected branch / block. Do not accept only that it makes the program look neat."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "State the two Boolean values that heater_on can store. Then state what True means for this heater.",
+          "marks": 2,
+          "blocks": [],
+          "hint": "First identify the two allowed Boolean values, then use the flag's name and role.",
+          "widgets": [
+            {
+              "id": "values",
+              "type": "choice",
+              "label": "The two Boolean values",
+              "options": [
+                "0 and 1.0",
+                "\"True\" and \"False\"",
+                "True and False",
+                "On and Off as Python keywords"
+              ],
+              "answer": 2,
+              "marks": 1
+            },
+            {
+              "id": "meaning",
+              "type": "choice",
+              "label": "What True means for heater_on",
+              "options": [
+                "The temperature is exactly 20.",
+                "The heater should be on.",
+                "The program should stop.",
+                "The stored temperature is text."
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Name Boolean values",
+              "text": "A Boolean flag has two possible values: True and False. Quoted words would be strings rather than Boolean values."
+            },
+            {
+              "title": "Interpret the flag in context",
+              "text": "The program sets heater_on to True when heating is needed. Here True records the intended on state; it does not store the temperature itself."
+            }
+          ],
+          "model": "True and False. True means that the heater should be on.",
+          "rubric": [
+            "[1] Both True and False. Accept TRUE and FALSE when the intended Boolean values are clear.",
+            "[1] True records that the heater should be on / heating is needed."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p3d7d0c5f",
+      "number": 7,
+      "label": "Practice 07",
+      "title": "Completing decisions",
+      "marks": 5,
+      "topics": [
+        "W2-L2",
+        "W4-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "A club member may borrow an item only when ItemsBorrowed is less than 3. Complete the two conditions. Use IsMember in the outer condition and ItemsBorrowed in the inner condition. IsMember is Boolean.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "IF __________________________ THEN\n    IF __________________________ THEN\n        OUTPUT \"Loan allowed\"\n    ELSE\n        OUTPUT \"Return an item first\"\n    ENDIF\nELSE\n    OUTPUT \"Join the club\"\nENDIF"
+            }
+          ],
+          "hint": "Keep the membership decision outside the separate borrowing-limit decision.",
+          "widgets": [
+            {
+              "id": "outer",
+              "type": "choice",
+              "label": "Outer pseudocode condition",
+              "options": [
+                "IsMember = FALSE",
+                "ItemsBorrowed < 3",
+                "IsMember = TRUE",
+                "ItemsBorrowed >= 3"
+              ],
+              "answer": 2,
+              "marks": 1
+            },
+            {
+              "id": "inner",
+              "type": "text",
+              "label": "Inner condition using ItemsBorrowed",
+              "answer": "ItemsBorrowed < 3",
+              "accept": [
+                "ItemsBorrowed < 3",
+                "3 > ItemsBorrowed",
+                "ItemsBorrowed <= 2",
+                "2 >= ItemsBorrowed",
+                "NOT (ItemsBorrowed >= 3)",
+                "not (ItemsBorrowed >= 3)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Control entry to the inner decision",
+              "text": "Only a club member should reach the borrowing-limit test, so the outer condition checks whether IsMember is TRUE.",
+              "code": "IF IsMember = TRUE THEN"
+            },
+            {
+              "title": "Apply the borrowing limit",
+              "text": "Within the member branch, allow borrowing only while ItemsBorrowed is below 3. At 3, the else branch asks for an item to be returned.",
+              "code": "IF ItemsBorrowed < 3 THEN"
+            }
+          ],
+          "model": "Outer condition: IsMember = TRUE. Inner condition: ItemsBorrowed < 3.",
+          "rubric": [
+            "[1] Outer condition IsMember = TRUE. Accept IsMember alone or an equivalent Boolean test.",
+            "[1] Inner condition ItemsBorrowed < 3. Accept ItemsBorrowed <= 2 because this variable counts whole items, or another equivalent expression."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Complete the three blanks in this Python code. score is an integer from 0 to 100. Output High for 80 to 100, Middle for 50 to 79, and Low for 0 to 49.",
+          "marks": 3,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "if score >= __________:\n    print(\"High\")\nelif score >= __________:\n    print(\"Middle\")\nelse:\n    print(____________________)"
+            }
+          ],
+          "hint": "Start each category at its lowest score; keep the output message as a string literal.",
+          "widgets": [
+            {
+              "id": "high",
+              "type": "text",
+              "label": "First threshold after score >=",
+              "answer": "80",
+              "accept": [
+                "80"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            },
+            {
+              "id": "middle",
+              "type": "text",
+              "label": "Second threshold after score >=",
+              "answer": "50",
+              "accept": [
+                "50"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            },
+            {
+              "id": "low",
+              "type": "text",
+              "label": "Final print argument, including quotes",
+              "answer": "\"Low\"",
+              "accept": [
+                "\"Low\"",
+                "'Low'"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Set the first threshold",
+              "text": "High begins at 80. Because >= includes equality, that threshold includes scores 80 through 100.",
+              "code": "if score >= 80:"
+            },
+            {
+              "title": "Use the earlier false condition",
+              "text": "The elif is reached only for scores below 80. Testing >= 50 now covers exactly 50 through 79.",
+              "code": "elif score >= 50:"
+            },
+            {
+              "title": "Handle the remaining category",
+              "text": "The final else covers 0 through 49. print needs the quoted string \"Low\" so Python treats it as text rather than a variable name.",
+              "code": "else:\n    print(\"Low\")"
+            }
+          ],
+          "model": "if score >= 80:\n    print(\"High\")\nelif score >= 50:\n    print(\"Middle\")\nelse:\n    print(\"Low\")",
+          "rubric": [
+            "[1] 80 in the first blank.",
+            "[1] 50 in the second blank. In this descending chain, the earlier branch has already handled scores of 80 or more.",
+            "[1] \"Low\" or 'Low' in the third blank, with quotation marks for the string literal. Award each blank independently."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g8-p377ac456",
+      "number": 8,
+      "label": "Practice 08",
+      "title": "Apply arithmetic precedence in an assignment",
+      "marks": 1,
+      "topics": [
+        "W1-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What value is output by this pseudocode?",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "Total <- 3 + 4 * 2\nOUTPUT Total"
+            }
+          ],
+          "hint": "Apply arithmetic precedence before storing the value in Total.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "14",
+                "10",
+                "24",
+                "11"
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Multiply first",
+              "text": "Multiplication has higher precedence than addition, so evaluate the product before the sum.",
+              "code": "4 * 2 = 8"
+            },
+            {
+              "title": "Store, then display",
+              "text": "Add the remaining 3, assign the result to Total, then OUTPUT reads that stored value.",
+              "code": "Total <- 3 + 8\nOUTPUT Total  // 11"
+            }
+          ],
+          "model": "D. 11\nMultiplication is performed before addition: 4 * 2 = 8, then 3 + 8 = 11.",
+          "rubric": [
+            "[1] Select D: 11"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p76c6a429",
+      "number": 9,
+      "label": "Practice 09",
+      "title": "Play tokens and registration",
+      "marks": 5,
+      "topics": [
+        "W2-L1",
+        "W2-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A game decides whether a player has enough tokens. Tokens is a whole number."
+        },
+        {
+          "type": "code",
+          "text": "IF Tokens >= 8 THEN\n    OUTPUT \"Play\"\nELSE\n    OUTPUT \"Collect\"\nENDIF"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the outputs for two separate runs.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Tokens",
+                "Output"
+              ],
+              "rows": [
+                [
+                  "7",
+                  ""
+                ],
+                [
+                  "8",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Test each value against the boundary separately.",
+          "widgets": [
+            {
+              "id": "tokens7",
+              "type": "text",
+              "label": "Output when Tokens = 7",
+              "answer": "Collect",
+              "accept": [
+                "Collect",
+                "collect",
+                "COLLECT"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            },
+            {
+              "id": "tokens8",
+              "type": "text",
+              "label": "Output when Tokens = 8",
+              "answer": "Play",
+              "accept": [
+                "Play",
+                "play",
+                "PLAY"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check below the boundary",
+              "text": "Seven is below 8, so the condition is false and the ELSE branch outputs Collect."
+            },
+            {
+              "title": "Check equality",
+              "text": "Eight satisfies >= 8. The true branch therefore outputs Play.",
+              "code": "7 >= 8 is FALSE\n8 >= 8 is TRUE"
+            }
+          ],
+          "model": "Tokens = 7: Collect. Tokens = 8: Play.",
+          "rubric": [
+            "[1] Collect for Tokens = 7.",
+            "[1] Play for Tokens = 8."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Write a condition that is TRUE when Tokens is less than 8.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "The boundary value 8 must not be included.",
+          "widgets": [
+            {
+              "id": "condition",
+              "type": "text",
+              "label": "Condition using Tokens",
+              "answer": "Tokens < 8",
+              "accept": [
+                "Tokens < 8",
+                "8 > Tokens",
+                "Tokens <= 7",
+                "7 >= Tokens",
+                "NOT (Tokens >= 8)",
+                "not (Tokens >= 8)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Translate the strict limit",
+              "text": "Less than excludes equality, so use < rather than <= with the given boundary.",
+              "code": "Tokens < 8"
+            },
+            {
+              "title": "Check a nearby pair",
+              "text": "The condition is true for 7 and false for 8. Since Tokens counts whole units, <= 7 describes the same set."
+            }
+          ],
+          "model": "Tokens < 8",
+          "rubric": [
+            "[1] Tokens < 8 or an equivalent whole-number comparison such as Tokens <= 7."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Complete the outputs. Check IsRegistered first; only check Age when IsRegistered is TRUE.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "IF IsRegistered = TRUE THEN\n    IF Age >= 14 THEN\n        OUTPUT \"Group B\"\n    ELSE\n        OUTPUT \"Group A\"\n    ENDIF\nELSE\n    OUTPUT \"Register\"\nENDIF"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "IsRegistered",
+                "Age",
+                "Output"
+              ],
+              "rows": [
+                [
+                  "TRUE",
+                  "14",
+                  ""
+                ],
+                [
+                  "FALSE",
+                  "16",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Use the outer decision to decide whether the age test is reached.",
+          "widgets": [
+            {
+              "id": "registered14",
+              "type": "text",
+              "label": "Output for TRUE, age 14",
+              "answer": "Group B",
+              "accept": [
+                "Group B",
+                "group b",
+                "GROUP B"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            },
+            {
+              "id": "unregistered16",
+              "type": "text",
+              "label": "Output for FALSE, age 16",
+              "answer": "Register",
+              "accept": [
+                "Register",
+                "register",
+                "REGISTER"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Enter the inner branch only for registered players",
+              "text": "With IsRegistered TRUE, age 14 is tested. It satisfies >= 14, so Group B is selected."
+            },
+            {
+              "title": "Follow the outer fallback otherwise",
+              "text": "With IsRegistered FALSE, the algorithm outputs Register directly. The age of 16 never reaches the inner decision."
+            }
+          ],
+          "model": "TRUE, 14: Group B. FALSE, 16: Register.",
+          "rubric": [
+            "[1] Group B for IsRegistered = TRUE and Age = 14.",
+            "[1] Register for IsRegistered = FALSE and Age = 16; the age test is skipped."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p73c69f70",
+      "number": 10,
+      "label": "Practice 10",
+      "title": "Store a Boolean flag",
+      "marks": 1,
+      "topics": [
+        "W6-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which assignment stores a Boolean value in finished?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Distinguish a Boolean literal from a string or a number.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "finished = \"True\"",
+                "finished = 1.0",
+                "finished = 0",
+                "finished = True"
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Recognise the two literal values",
+              "text": "Python Boolean literals are True and False, written without quotes."
+            },
+            {
+              "title": "Check the other types",
+              "text": "\"True\" is a string, 1.0 is a float and 0 is an integer. The unquoted literal True is the Boolean value.",
+              "code": "finished = True"
+            }
+          ],
+          "model": "D. finished = True",
+          "rubric": [
+            "[1] Select D: finished = True"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p79c6a8e2",
+      "number": 11,
+      "label": "Practice 11",
+      "title": "Choose a true Boolean expression",
+      "marks": 1,
+      "topics": [
+        "W3-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which Boolean expression evaluates to TRUE?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Apply the rule for each operator before deciding.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "TRUE AND FALSE",
+                "NOT TRUE",
+                "FALSE OR TRUE",
+                "FALSE OR FALSE"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Use the basic rules",
+              "text": "AND needs both operands, NOT reverses one value, and OR needs at least one true operand."
+            },
+            {
+              "title": "Compare the results",
+              "text": "The two AND/NOT choices are false, and FALSE OR FALSE is false. FALSE OR TRUE is true because one operand is true.",
+              "code": "FALSE; FALSE; TRUE; FALSE"
+            }
+          ],
+          "model": "C. FALSE OR TRUE",
+          "rubric": [
+            "[1] Select C: FALSE OR TRUE"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p80c6b3e7",
+      "number": 12,
+      "label": "Practice 12",
+      "title": "Flags and lap categories",
+      "marks": 5,
+      "topics": [
+        "W5-L1",
+        "W4-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "battery_ok is False and lid_closed is True. State the output.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "if battery_ok and lid_closed:\n    print(\"Start\")\nelse:\n    print(\"Wait\")"
+            }
+          ],
+          "hint": "Both operands must be true for an and expression to be true.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Output of the program",
+              "answer": "Wait",
+              "accept": [
+                "Wait",
+                "wait",
+                "WAIT"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Evaluate the combined condition",
+              "text": "False and True is false because one required condition is missing."
+            },
+            {
+              "title": "Choose the alternative branch",
+              "text": "The false condition selects else, which prints Wait. The Start message is skipped."
+            }
+          ],
+          "model": "Wait.",
+          "rubric": [
+            "[1] Wait."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Complete the two blanks using Python Boolean operators. lid_open is the opposite of lid_closed. needs_attention must be True when at least one of battery_low and lid_open is True.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "lid_open = __________ lid_closed\nneeds_attention = battery_low __________ lid_open"
+            }
+          ],
+          "hint": "Translate opposite and at least one into their Boolean operators.",
+          "widgets": [
+            {
+              "id": "opposite",
+              "type": "text",
+              "label": "Operator before lid_closed",
+              "answer": "not",
+              "accept": [
+                "not"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "either",
+              "type": "text",
+              "label": "Operator between battery_low and lid_open",
+              "answer": "or",
+              "accept": [
+                "or"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Reverse the state",
+              "text": "Use not to obtain the opposite of lid_closed. This creates the open-state flag without changing lid_closed.",
+              "code": "lid_open = not lid_closed"
+            },
+            {
+              "title": "Allow either warning condition",
+              "text": "At least one includes a low battery, an open lid, or both. or is true in all three of those cases.",
+              "code": "needs_attention = battery_low or lid_open"
+            }
+          ],
+          "model": "lid_open = not lid_closed\nneeds_attention = battery_low or lid_open",
+          "rubric": [
+            "[1] not in the first blank.",
+            "[1] or in the second blank. Mark independently of the first blank."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State the output for each separate run: laps = 4 and laps = 3.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "if laps >= 8:\n    print(\"Gold\")\nelif laps >= 4:\n    print(\"Silver\")\nelse:\n    print(\"Bronze\")"
+            }
+          ],
+          "hint": "Test the first condition before moving to elif or else.",
+          "widgets": [
+            {
+              "id": "laps4",
+              "type": "text",
+              "label": "Output when laps = 4",
+              "answer": "Silver",
+              "accept": [
+                "Silver",
+                "silver",
+                "SILVER"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            },
+            {
+              "id": "laps3",
+              "type": "text",
+              "label": "Output when laps = 3",
+              "answer": "Bronze",
+              "accept": [
+                "Bronze",
+                "bronze",
+                "BRONZE"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Trace the middle boundary",
+              "text": "Four fails the first threshold of 8, but satisfies the elif threshold of 4. The selected output is Silver."
+            },
+            {
+              "title": "Trace a value below the middle threshold",
+              "text": "Three fails both comparisons, so the final else outputs Bronze. These are separate runs, not two outputs from one run."
+            }
+          ],
+          "model": "laps = 4: Silver. laps = 3: Bronze.",
+          "rubric": [
+            "[1] Silver for laps = 4.",
+            "[1] Bronze for laps = 3."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p6d159355",
+      "number": 13,
+      "label": "Practice 13",
+      "title": "Python conditions and categories",
+      "marks": 4,
+      "topics": [
+        "W4-L1",
+        "W4-L2",
+        "W5-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "Each part is independent. Use the complete category program supplied with part (b) for parts (b) and (c)."
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the comparison operator so that the condition tests whether attempts is exactly zero.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "if attempts __________ 0:\n    print(\"New\")"
+            }
+          ],
+          "hint": "Distinguish a comparison with a value from assigning that value.",
+          "widgets": [
+            {
+              "id": "operator",
+              "type": "choice",
+              "label": "Comparison operator",
+              "options": [
+                "=",
+                "==",
+                "!=",
+                ">="
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Interpret exactly zero",
+              "text": "The condition must test equality, rather than inequality or a range."
+            },
+            {
+              "title": "Use the Python comparison operator",
+              "text": "Python uses == to compare values. A single = is assignment and cannot be used for this condition.",
+              "code": "if attempts == 0:"
+            }
+          ],
+          "model": "==, giving if attempts == 0:",
+          "rubric": [
+            "[1] ==. Do not accept the assignment operator =."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State the output when level is 35.",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "if level >= 70:\n    print(\"Expert\")\nelif level >= 35:\n    print(\"Developing\")\nelse:\n    print(\"Beginner\")"
+            }
+          ],
+          "hint": "Test the conditions in order and stop at the first true branch.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "choice",
+              "label": "Output for level = 35",
+              "options": [
+                "Expert",
+                "Developing",
+                "Beginner",
+                "Expert and Developing"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check the first condition",
+              "text": "Thirty-five does not satisfy the first threshold of 70, so continue to the elif condition."
+            },
+            {
+              "title": "Check the next threshold",
+              "text": "The >= 35 test includes 35, so this branch prints Developing. The final else is skipped.",
+              "code": "35 >= 35 is True"
+            }
+          ],
+          "model": "Developing.",
+          "rubric": [
+            "[1] Developing only."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Use the same category program for a fresh run with level equal to 34. State the output.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "A final else runs when all earlier conditions in the chain are false.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "choice",
+              "label": "Output for level = 34",
+              "options": [
+                "Expert",
+                "Developing",
+                "Beginner",
+                "No output"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check both comparisons",
+              "text": "Thirty-four is below both 70 and 35, so neither of the conditional branches is selected."
+            },
+            {
+              "title": "Use the fallback branch",
+              "text": "The final else handles the remaining values and prints Beginner. This run is independent of the previous run."
+            }
+          ],
+          "model": "Beginner.",
+          "rubric": [
+            "[1] Beginner only."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "locked is False and connected is True. State the result of the Python expression (not locked) and connected.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Evaluate the reversal in brackets before combining it with the second flag.",
+          "widgets": [
+            {
+              "id": "result",
+              "type": "choice",
+              "label": "Expression result",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Reverse the lock flag",
+              "text": "locked is False, so not locked is True."
+            },
+            {
+              "title": "Require both resulting conditions",
+              "text": "The expression is now True and True. Both required conditions are satisfied, so the result is True.",
+              "code": "(not False) and True\nTrue and True\nTrue"
+            }
+          ],
+          "model": "True.",
+          "rubric": [
+            "[1] True."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p3d7acdc8",
+      "number": 14,
+      "label": "Practice 14",
+      "title": "Recognise the role of elif",
+      "marks": 1,
+      "topics": [
+        "W4-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which Python keyword checks another condition when the preceding if condition was False?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look for the keyword that introduces another condition in the same chain.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "else",
+                "then",
+                "elif",
+                "endif"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Distinguish another test from a fallback",
+              "text": "An else branch has no condition. A branch that tests another condition needs a different keyword."
+            },
+            {
+              "title": "Continue the selection chain",
+              "text": "Python uses elif after the earlier conditions have been false. It can select another branch without starting a separate if statement.",
+              "code": "if ...:\n    ...\nelif ...:\n    ..."
+            }
+          ],
+          "model": "C. elif\nAn elif branch tests another condition after earlier conditions in the same chain are false.",
+          "rubric": [
+            "[1] Select C: elif"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p66158850",
+      "number": 15,
+      "label": "Practice 15",
+      "title": "Read a stock-status algorithm",
+      "marks": 4,
+      "topics": [
+        "W1-L2",
+        "W2-L1",
+        "W6-L1",
+        "W5-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "This pseudocode calculates a remaining stock count and a Boolean status. Stock is a whole number."
+        },
+        {
+          "type": "code",
+          "text": "INPUT Stock\nRemaining <- Stock - 4\nIF Remaining >= 9 THEN\n    Ready <- TRUE\nELSE\n    Ready <- FALSE\nENDIF\nOUTPUT Ready"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "The user enters 17 for Stock. State the value assigned to Remaining.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Substitute the entered value into the expression on the right of the assignment.",
+          "widgets": [
+            {
+              "id": "remaining",
+              "type": "text",
+              "label": "Value of Remaining",
+              "answer": "13",
+              "accept": [
+                "13"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the input value",
+              "text": "Stock receives 17 from the INPUT instruction."
+            },
+            {
+              "title": "Evaluate and store the expression",
+              "text": "Subtract 4, then store that result in Remaining.",
+              "code": "Remaining <- 17 - 4\nRemaining = 13"
+            }
+          ],
+          "model": "13.",
+          "rubric": [
+            "[1] Remaining is 13."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "For this separate check, start at the IF instruction with Remaining already equal to 9. State the final output.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check whether the comparison includes the boundary itself.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "choice",
+              "label": "Final output",
+              "options": [
+                "TRUE",
+                "FALSE",
+                "9",
+                "Ready"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Test the boundary",
+              "text": "The >= comparison includes equality, so Remaining = 9 makes the condition true.",
+              "code": "9 >= 9 is TRUE"
+            },
+            {
+              "title": "Follow the selected assignment",
+              "text": "The true branch assigns TRUE to Ready. OUTPUT Ready displays that stored Boolean value rather than the variable name."
+            }
+          ],
+          "model": "TRUE.",
+          "rubric": [
+            "[1] TRUE; accept True."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "State the data type used for Ready.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look at the possible values assigned to the variable, rather than the numeric input type.",
+          "widgets": [
+            {
+              "id": "type",
+              "type": "choice",
+              "label": "Data type of Ready",
+              "options": [
+                "Integer",
+                "Boolean",
+                "String",
+                "Float"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the assigned values",
+              "text": "Ready receives TRUE in one branch and FALSE in the other."
+            },
+            {
+              "title": "Name the type",
+              "text": "A value that records true or false has a Boolean data type. Ready does not store the numeric stock count."
+            }
+          ],
+          "model": "Boolean.",
+          "rubric": [
+            "[1] Boolean or bool."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "A Python version uses the variable ready. Write the Python instruction equivalent to OUTPUT Ready.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Translate the output operation while keeping ready as a variable reference.",
+          "widgets": [
+            {
+              "id": "python",
+              "type": "choice",
+              "label": "Equivalent Python instruction",
+              "options": [
+                "print(ready)",
+                "print(\"ready\")",
+                "OUTPUT ready",
+                "input(ready)"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Use Python output syntax",
+              "text": "Python uses print(...) to display a value. The pseudocode keyword OUTPUT is replaced by that function call."
+            },
+            {
+              "title": "Preserve the variable meaning",
+              "text": "Put ready inside the parentheses without quotation marks so its stored value is displayed.",
+              "code": "print(ready)"
+            }
+          ],
+          "model": "print(ready)",
+          "rubric": [
+            "[1] print(ready), using the given Python variable name without quotation marks."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p387ac5e9",
+      "number": 16,
+      "label": "Practice 16",
+      "title": "Describe the behaviour of selection without an ELSE branch",
+      "marks": 1,
+      "topics": [
+        "W2-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "An IF-THEN statement has no ELSE branch. What happens when its condition is FALSE?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about where execution goes when a branch is skipped.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "Execution continues with the instruction after ENDIF.",
+                "The instructions inside the IF block still run once.",
+                "The whole program must stop.",
+                "The program automatically outputs the word FALSE."
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check the condition",
+              "text": "The instructions between IF and ENDIF run only if the condition is true. A false condition skips that block."
+            },
+            {
+              "title": "Continue the algorithm",
+              "text": "Without an ELSE branch there is no alternative block to run. Execution continues at the instruction after ENDIF."
+            }
+          ],
+          "model": "A. Execution continues with the instruction after ENDIF.\nA false condition skips the IF block; execution continues after ENDIF.",
+          "rubric": [
+            "[1] Select A: Execution continues with the instruction after ENDIF."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p3e7acf5b",
+      "number": 17,
+      "label": "Practice 17",
+      "title": "Select AND when two Boolean conditions must both be true",
+      "marks": 1,
+      "topics": [
+        "W5-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Both has_ticket and seat_available are Boolean. Which Python expression is True only when both variables are True?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check which operator requires the two flags together.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "has_ticket or seat_available",
+                "has_ticket and seat_available",
+                "not has_ticket",
+                "has_ticket and not seat_available"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Interpret both",
+              "text": "Admission here needs a ticket and an available seat at the same time. If either flag is false, the expression must be false."
+            },
+            {
+              "title": "Choose the matching operator",
+              "text": "and is true only when both operands are true. or would also permit just one true flag.",
+              "code": "has_ticket and seat_available"
+            }
+          ],
+          "model": "B. has_ticket and seat_available\nand requires both has_ticket and seat_available to be True.",
+          "rubric": [
+            "[1] Select B: has_ticket and seat_available"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p397ac77c",
+      "number": 18,
+      "label": "Practice 18",
+      "title": "Trace an ELSEIF chain when the first condition is true",
+      "marks": 1,
+      "topics": [
+        "W2-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Points is 25. Which word is output?",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "IF Points >= 20 THEN\n    OUTPUT \"Gold\"\nELSEIF Points >= 10 THEN\n    OUTPUT \"Silver\"\nELSE\n    OUTPUT \"Bronze\"\nENDIF"
+            }
+          ],
+          "hint": "In an ELSEIF chain, only the first true branch runs.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "Silver",
+                "Bronze",
+                "Gold",
+                "Gold and Silver"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Test the first condition",
+              "text": "Substitute the given Points value into the first comparison. It is already high enough for this branch.",
+              "code": "25 >= 20 is TRUE"
+            },
+            {
+              "title": "Follow one branch",
+              "text": "The first branch outputs Gold. Since a branch has been selected, the ELSEIF and ELSE branches are skipped.",
+              "code": "OUTPUT \"Gold\""
+            }
+          ],
+          "model": "C. Gold\nThe first condition is true because 25 is at least 20. The Gold branch runs and the remaining branches are skipped.",
+          "rubric": [
+            "[1] Select C: Gold"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p3c7d0acc",
+      "number": 19,
+      "label": "Practice 19",
+      "title": "Translating an algorithm",
+      "marks": 5,
+      "topics": [
+        "W5-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "This pseudocode calculates a parking charge. The user enters a valid non-negative whole number of minutes."
+        },
+        {
+          "type": "code",
+          "text": "INPUT Minutes\nIF Minutes <= 30 THEN\n    Charge <- 2\nELSE\n    Charge <- 5\nENDIF\nOUTPUT Charge"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the five blanks to translate the pseudocode into Python. The input line and indentation are supplied. Use if and else.",
+          "marks": 5,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "minutes = int(input())\nif __________________________:\n    __________________________\n__________:\n    __________________________\n______________________________"
+            }
+          ],
+          "hint": "Translate one blank at a time: condition, true assignment, alternative keyword, false assignment and output.",
+          "widgets": [
+            {
+              "id": "condition",
+              "type": "text",
+              "label": "Condition after if",
+              "answer": "minutes <= 30",
+              "accept": [
+                "minutes <= 30",
+                "30 >= minutes",
+                "minutes < 31",
+                "31 > minutes",
+                "not (minutes > 30)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "low-charge",
+              "type": "text",
+              "label": "First indented assignment (use charge)",
+              "answer": "charge = 2",
+              "accept": [
+                "charge = 2"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "branch",
+              "type": "text",
+              "label": "Alternative branch keyword",
+              "answer": "else",
+              "accept": [
+                "else"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "high-charge",
+              "type": "text",
+              "label": "Second indented assignment (use charge)",
+              "answer": "charge = 5",
+              "accept": [
+                "charge = 5"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "print",
+              "type": "text",
+              "label": "Final output instruction (use charge)",
+              "answer": "print(charge)",
+              "accept": [
+                "print(charge)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Preserve the boundary",
+              "text": "The pseudocode includes exactly 30 minutes in the lower-charge branch, so keep <= in the condition. The numeric input line is already supplied.",
+              "code": "if minutes <= 30:"
+            },
+            {
+              "title": "Translate the assignments",
+              "text": "Python uses = where the pseudocode uses <-. Store 2 in the true branch and 5 in the else branch.",
+              "code": "    charge = 2\nelse:\n    charge = 5"
+            },
+            {
+              "title": "Output after the selection",
+              "text": "print(charge) is outside both branches so it runs after either assignment. The supplied indentation makes that shared output position clear.",
+              "code": "print(charge)"
+            },
+            {
+              "title": "Check both sides",
+              "text": "At 30 minutes the charge is 2; at 31 it is 5. These two checks catch a mistaken strict operator or reversed branches."
+            }
+          ],
+          "model": "minutes = int(input())\nif minutes <= 30:\n    charge = 2\nelse:\n    charge = 5\nprint(charge)",
+          "rubric": [
+            "[1] minutes <= 30 in the condition blank. Accept an equivalent condition for 30 minutes or fewer that fits the supplied branches.",
+            "[1] charge = 2 in the first indented blank.",
+            "[1] else in the unindented branch-keyword blank. The colon is already supplied.",
+            "[1] charge = 5 in the second indented blank.",
+            "[1] print(charge) in the final blank. Accept consistent alternative variable names for charge across the three relevant lines, and an optional label inside print. Award the output mark independently of an earlier wrong assignment."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g8-p437d15d1",
+      "number": 20,
+      "label": "Practice 20",
+      "title": "Debugging Boolean conditions",
+      "marks": 5,
+      "topics": [
+        "W5-L1",
+        "W4-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "The variables door_open, window_open and power_on are Boolean. The program must output Check if either opening is open. Otherwise it must output Ready if the power is on, or Off if the power is off."
+        },
+        {
+          "type": "text",
+          "text": "The following code contains two incorrect operators."
+        },
+        {
+          "type": "code",
+          "text": "if door_open and window_open:\n    print(\"Check\")\nelif power_on = True:\n    print(\"Ready\")\nelse:\n    print(\"Off\")"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "The first condition uses the wrong Boolean operator. The elif line uses assignment instead of comparison. Rewrite these two lines correctly.",
+          "marks": 2,
+          "blocks": [],
+          "hint": "Use the rule for either opening and the Python operator for comparing values.",
+          "widgets": [
+            {
+              "id": "first-condition",
+              "type": "text",
+              "label": "Corrected first if line",
+              "answer": "if door_open or window_open:",
+              "accept": [
+                "if door_open or window_open:",
+                "if window_open or door_open:"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "elif-condition",
+              "type": "text",
+              "label": "Corrected elif line",
+              "answer": "elif power_on == True:",
+              "accept": [
+                "elif power_on == True:",
+                "elif power_on:",
+                "elif True == power_on:",
+                "elif power_on is True:"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Repair the logical requirement",
+              "text": "Either opening means the warning is needed when at least one opening is open. or implements that rule; and would miss cases where only one is open.",
+              "code": "if door_open or window_open:"
+            },
+            {
+              "title": "Repair comparison syntax",
+              "text": "In Python, = assigns while == compares. Since power_on is already Boolean, testing it directly is also valid.",
+              "code": "elif power_on == True:\n# or: elif power_on:"
+            }
+          ],
+          "model": "if door_open or window_open:\nelif power_on == True:",
+          "rubric": [
+            "[1] if door_open or window_open: (or a logically equivalent condition). The operator between the opening conditions must express OR.",
+            "[1] elif power_on == True: or elif power_on:. Accept an equivalent valid Boolean test. Do not accept = because assignment cannot be used as this comparison."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Complete the blanks using Python Boolean operators. door_closed must be the opposite of door_open. can_start must be True only when both power_on and door_closed are True.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "door_closed = __________ door_open\ncan_start = power_on __________ door_closed"
+            }
+          ],
+          "hint": "Use one operator for the opposite state and another for two required conditions.",
+          "widgets": [
+            {
+              "id": "opposite",
+              "type": "text",
+              "label": "Operator before door_open",
+              "answer": "not",
+              "accept": [
+                "not"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            },
+            {
+              "id": "both",
+              "type": "text",
+              "label": "Operator between power_on and door_closed",
+              "answer": "and",
+              "accept": [
+                "and"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Reverse the first flag",
+              "text": "not returns the opposite Boolean value: an open door gives door_closed False, and a closed door gives it True.",
+              "code": "door_closed = not door_open"
+            },
+            {
+              "title": "Require both conditions",
+              "text": "Starting is allowed only when power is on and the door is closed. and requires both flags to be true.",
+              "code": "can_start = power_on and door_closed"
+            }
+          ],
+          "model": "door_closed = not door_open\ncan_start = power_on and door_closed",
+          "rubric": [
+            "[1] not in the first blank.",
+            "[1] and in the second blank. Award independently of the first blank; do not penalise an earlier incorrect door_closed expression again."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Use the corrected program. State the output when door_open is False, window_open is False and power_on is True.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Trace the corrected chain using only the values in this new run.",
+          "widgets": [
+            {
+              "id": "output",
+              "type": "text",
+              "label": "Output of the corrected program",
+              "answer": "Ready",
+              "accept": [
+                "Ready",
+                "ready",
+                "READY"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Test the corrected first condition",
+              "text": "Both openings are closed, so False or False is false and the Check branch is skipped."
+            },
+            {
+              "title": "Test the next condition",
+              "text": "power_on is True, so the elif branch prints Ready. The final else is skipped because a branch has now run.",
+              "code": "print(\"Ready\")"
+            }
+          ],
+          "model": "Ready",
+          "rubric": [
+            "[1] Ready only. The first condition is false and the elif condition is true. Award independently of the candidate's corrections in part (a)."
+          ]
+        }
+      ],
+      "kind": "applied"
+    },
+    {
+      "id": "g8-p671589e3",
+      "number": 21,
+      "label": "Practice 21",
+      "title": "Apply Boolean precedence",
+      "marks": 1,
+      "topics": [
+        "W3-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which operation is evaluated first in the expression FALSE OR NOT TRUE AND TRUE?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Recall the order NOT, then AND, then OR when no brackets are present.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "FALSE OR NOT TRUE",
+                "TRUE AND TRUE",
+                "NOT TRUE",
+                "FALSE OR TRUE"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Apply the highest-priority operator",
+              "text": "NOT has higher precedence than AND and OR, so evaluate NOT TRUE first.",
+              "code": "FALSE OR (NOT TRUE) AND TRUE"
+            },
+            {
+              "title": "Continue in the correct order",
+              "text": "NOT TRUE becomes FALSE. The remaining AND is evaluated next, followed by OR. This prevents OR from being applied too early.",
+              "code": "FALSE OR FALSE AND TRUE\nFALSE OR FALSE\nFALSE"
+            }
+          ],
+          "model": "C. NOT TRUE is evaluated first.",
+          "rubric": [
+            "[1] Select C: NOT TRUE"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p397d0613",
+      "number": 22,
+      "label": "Practice 22",
+      "title": "Decisions and boundary values",
+      "marks": 5,
+      "topics": [
+        "W2-L1",
+        "W2-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "The first algorithm decides whether a player is ready. Credits is a whole number."
+        },
+        {
+          "type": "code",
+          "text": "IF Credits >= 5 THEN\n    OUTPUT \"Ready\"\nELSE\n    OUTPUT \"Wait\"\nENDIF"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Complete the table for two separate runs of the algorithm.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Credits",
+                "Output"
+              ],
+              "rows": [
+                [
+                  "4",
+                  ""
+                ],
+                [
+                  "5",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Test each input independently and remember that >= includes equality.",
+          "widgets": [
+            {
+              "id": "credits4",
+              "type": "text",
+              "label": "Output when Credits = 4",
+              "answer": "Wait",
+              "accept": [
+                "Wait",
+                "wait",
+                "WAIT"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            },
+            {
+              "id": "credits5",
+              "type": "text",
+              "label": "Output when Credits = 5",
+              "answer": "Ready",
+              "accept": [
+                "Ready",
+                "ready",
+                "READY"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Trace the value below the boundary",
+              "text": "Four does not satisfy the at-least-five condition, so execution follows ELSE.",
+              "code": "4 >= 5 is FALSE -> Wait"
+            },
+            {
+              "title": "Trace the boundary itself",
+              "text": "Five satisfies >= because equality is included, so the IF branch runs.",
+              "code": "5 >= 5 is TRUE -> Ready"
+            }
+          ],
+          "model": "Credits = 4: Wait. Credits = 5: Ready.",
+          "rubric": [
+            "[1] Wait for Credits = 4.",
+            "[1] Ready for Credits = 5."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Write a condition that is TRUE when Credits is less than 5.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "The required set includes values below 5 and excludes 5 itself.",
+          "widgets": [
+            {
+              "id": "condition",
+              "type": "text",
+              "label": "Condition using Credits",
+              "answer": "Credits < 5",
+              "accept": [
+                "Credits < 5",
+                "5 > Credits",
+                "Credits <= 4",
+                "4 >= Credits",
+                "NOT (Credits >= 5)",
+                "not (Credits >= 5)"
+              ],
+              "normalize": "python",
+              "marks": 1,
+              "placeholder": "Complete this code blank"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Translate the words",
+              "text": "Less than is a strict comparison, so 5 must not satisfy the condition.",
+              "code": "Credits < 5"
+            },
+            {
+              "title": "Check the boundary",
+              "text": "Substitute 4 and 5. The required answers are true for 4 and false for 5. Since Credits is a whole number, Credits <= 4 is equivalent."
+            }
+          ],
+          "model": "Credits < 5",
+          "rubric": [
+            "[1] Credits < 5. Accept 5 > Credits, Credits <= 4 or NOT (Credits >= 5), or another equivalent whole-number condition."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Complete the table. Check HasPass first; only check Age when HasPass is TRUE.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "IF HasPass = TRUE THEN\n    IF Age < 13 THEN\n        OUTPUT \"Junior\"\n    ELSE\n        OUTPUT \"Senior\"\n    ENDIF\nELSE\n    OUTPUT \"Visitor\"\nENDIF"
+            },
+            {
+              "type": "table",
+              "headers": [
+                "HasPass",
+                "Age",
+                "Output"
+              ],
+              "rows": [
+                [
+                  "TRUE",
+                  "10",
+                  ""
+                ],
+                [
+                  "FALSE",
+                  "15",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Only follow an inner condition if its outer branch has been entered.",
+          "widgets": [
+            {
+              "id": "pass-age10",
+              "type": "text",
+              "label": "Output for HasPass = TRUE, Age = 10",
+              "answer": "Junior",
+              "accept": [
+                "Junior",
+                "junior",
+                "JUNIOR"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            },
+            {
+              "id": "no-pass-age15",
+              "type": "text",
+              "label": "Output for HasPass = FALSE, Age = 15",
+              "answer": "Visitor",
+              "accept": [
+                "Visitor",
+                "visitor",
+                "VISITOR"
+              ],
+              "normalize": "text",
+              "marks": 1,
+              "placeholder": "Type the output"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Follow the true outer branch",
+              "text": "With a pass, the inner age comparison is reached. Ten is below 13, so the Junior branch runs.",
+              "code": "HasPass = TRUE\n10 < 13 is TRUE -> Junior"
+            },
+            {
+              "title": "Skip an unreachable inner test",
+              "text": "Without a pass, the outer ELSE runs immediately. Age is not checked, so being 15 does not select Senior.",
+              "code": "HasPass = FALSE -> Visitor"
+            }
+          ],
+          "model": "HasPass = TRUE, Age = 10: Junior. HasPass = FALSE, Age = 15: Visitor.",
+          "rubric": [
+            "[1] Junior for HasPass = TRUE and Age = 10.",
+            "[1] Visitor for HasPass = FALSE and Age = 15. The inner age test is skipped."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p3a7ac90f",
+      "number": 23,
+      "label": "Practice 23",
+      "title": "Recall Boolean operator precedence",
+      "marks": 1,
+      "topics": [
+        "W3-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which is the order of Boolean operator precedence, from highest to lowest, when there are no brackets?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Recall the priority of a reversal, a both-required test and an either-allowed test.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "AND, OR, NOT",
+                "NOT, AND, OR",
+                "OR, AND, NOT",
+                "NOT, OR, AND"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Apply the tightest operator",
+              "text": "Without brackets, NOT is evaluated first because it reverses the Boolean value immediately following it."
+            },
+            {
+              "title": "Combine the remaining results",
+              "text": "Evaluate AND next and OR last. Brackets can explicitly make a different part happen first.",
+              "code": "NOT, then AND, then OR"
+            }
+          ],
+          "model": "B. NOT, AND, OR\nNOT is evaluated before AND, and AND before OR. Brackets can change this order.",
+          "rubric": [
+            "[1] Select B: NOT, AND, OR"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p367ac2c3",
+      "number": 24,
+      "label": "Practice 24",
+      "title": "Explain the purpose of pseudocode",
+      "marks": 1,
+      "topics": [
+        "W1-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What is the main purpose of writing pseudocode before writing a program?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Think about what planning an algorithm achieves before any executable code exists.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "To make the computer execute the algorithm immediately.",
+                "To describe an algorithm without needing the exact syntax of a programming language.",
+                "To remove the need to test the finished program.",
+                "To store all the data used by the program."
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Separate planning from execution",
+              "text": "Pseudocode describes the sequence of operations in language a person can follow. A computer needs an executable program to carry out those operations."
+            },
+            {
+              "title": "Match the purpose",
+              "text": "The correct option describes the algorithm without demanding one programming language's exact syntax. Planning does not remove the need for testing."
+            }
+          ],
+          "model": "B. To describe an algorithm without needing the exact syntax of a programming language.\nPseudocode communicates the steps of an algorithm without requiring executable language syntax.",
+          "rubric": [
+            "[1] Select B: To describe an algorithm without needing the exact syntax of a programming language."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p75c6a296",
+      "number": 25,
+      "label": "Practice 25",
+      "title": "Search for an item code",
+      "marks": 5,
+      "topics": [
+        "W3-L2",
+        "W6-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A linear search checks the list from position 1 and stops at the first match. The target is an item code."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Position",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "rows": [
+            [
+              "Code",
+              "12",
+              "5",
+              "19",
+              "8"
+            ]
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "The target is 19. State the three values compared, in order, until the search stops.",
+          "marks": 3,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "First comparison",
+                "Second comparison",
+                "Third comparison"
+              ],
+              "rows": [
+                [
+                  "",
+                  "",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Visit one position at a time and include the successful comparison.",
+          "widgets": [
+            {
+              "id": "first",
+              "type": "text",
+              "label": "First value compared",
+              "answer": "12",
+              "accept": [
+                "12"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            },
+            {
+              "id": "second",
+              "type": "text",
+              "label": "Second value compared",
+              "answer": "5",
+              "accept": [
+                "5"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            },
+            {
+              "id": "third",
+              "type": "text",
+              "label": "Third value compared",
+              "answer": "19",
+              "accept": [
+                "19"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check the first two positions",
+              "text": "Compare 12 with 19, then 5 with 19. Neither comparison matches, so continue.",
+              "code": "12 = 19 is FALSE\n5 = 19 is FALSE"
+            },
+            {
+              "title": "Stop at the successful comparison",
+              "text": "The third value is 19, so it matches. Record 19 as the third compared value; the last item, 8, is not visited."
+            }
+          ],
+          "model": "12, 5, 19.",
+          "rubric": [
+            "[1] First value 12.",
+            "[1] Second value 5.",
+            "[1] Third value 19; stop on this match."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "A new search starts at position 1 with target 30. State the number of comparisons.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look for a match, then decide whether the search can stop early.",
+          "widgets": [
+            {
+              "id": "comparisons",
+              "type": "text",
+              "label": "Number of comparisons",
+              "answer": "4",
+              "accept": [
+                "4"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Use the new target",
+              "text": "Thirty is different from every value in the supplied list."
+            },
+            {
+              "title": "Reach the end of the list",
+              "text": "Without a match, all four items are compared. The comparison count is four, not three from the earlier successful run."
+            }
+          ],
+          "model": "4 comparisons.",
+          "rubric": [
+            "[1] 4 comparisons. This new run is independent of part (a)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Found starts as FALSE and changes to TRUE only when the target is found. State its final value after searching for 30.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check whether the event that changes the flag occurs.",
+          "widgets": [
+            {
+              "id": "found",
+              "type": "choice",
+              "label": "Final value of Found",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the flag rule",
+              "text": "Found starts FALSE. A successful comparison would set it to TRUE."
+            },
+            {
+              "title": "Apply the search result",
+              "text": "No item equals 30, so no assignment changes the flag. Its final value remains FALSE."
+            }
+          ],
+          "model": "FALSE.",
+          "rubric": [
+            "[1] FALSE; accept False."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p74c6a103",
+      "number": 26,
+      "label": "Practice 26",
+      "title": "A valid temperature test",
+      "marks": 1,
+      "topics": [
+        "W4-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which line correctly begins a Python selection that tests whether temperature is below 10?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Check the comparison, the keyword case and the punctuation.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "if temperature < 10:",
+                "IF temperature < 10 THEN",
+                "if temperature = 10:",
+                "if temperature < 10"
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Translate below",
+              "text": "Below 10 excludes 10 itself, so the condition uses the strict comparison <."
+            },
+            {
+              "title": "Use Python structure",
+              "text": "A Python selection starts with lowercase if and ends this line with a colon. Assignment = cannot express the stated condition.",
+              "code": "if temperature < 10:"
+            }
+          ],
+          "model": "A. if temperature < 10:",
+          "rubric": [
+            "[1] Select A: if temperature < 10:"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p3a7d07a6",
+      "number": 27,
+      "label": "Practice 27",
+      "title": "Tracking a ticket total",
+      "marks": 5,
+      "topics": [
+        "W1-L1",
+        "W1-L2"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A ticket program uses this pseudocode. The input is a whole number."
+        },
+        {
+          "type": "code",
+          "text": "INPUT Tickets\nPrice <- 4\nTotal <- Tickets * Price\nTotal <- Total + 2\nOUTPUT Total"
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "State the name of the variable that receives data from the user.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Find the INPUT instruction and look immediately after its keyword.",
+          "widgets": [
+            {
+              "id": "variable",
+              "type": "text",
+              "label": "Variable receiving the input",
+              "answer": "Tickets",
+              "accept": [
+                "Tickets",
+                "tickets",
+                "TICKETS"
+              ],
+              "normalize": "text",
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Find where data enters",
+              "text": "INPUT is the instruction that receives a value from the user."
+            },
+            {
+              "title": "Read its destination",
+              "text": "The name after INPUT identifies the variable that stores the received value.",
+              "code": "INPUT Tickets"
+            }
+          ],
+          "model": "Tickets",
+          "rubric": [
+            "[1] Tickets. Accept different capitalisation."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "State what the instruction OUTPUT Total does.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Distinguish an unquoted variable name from a quoted message.",
+          "widgets": [
+            {
+              "id": "meaning",
+              "type": "choice",
+              "label": "Choose what this instruction does",
+              "options": [
+                "Displays the word Total.",
+                "Displays the value currently stored in Total.",
+                "Asks the user to enter a new Total.",
+                "Adds a value to Total."
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the keyword",
+              "text": "OUTPUT sends information to the user; it does not request new input or change the value."
+            },
+            {
+              "title": "Interpret the unquoted name",
+              "text": "Total is a variable name here, so its current stored value is displayed. Quotes would be needed to display the word itself."
+            }
+          ],
+          "model": "It displays the value currently stored in Total.",
+          "rubric": [
+            "[1] Displays / outputs the value stored in Total. Do not accept only that it displays the word Total."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "The user enters 3 for Tickets. Complete the trace table.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "Instruction just completed",
+                "Value of Total"
+              ],
+              "rows": [
+                [
+                  "Total <- Tickets * Price",
+                  ""
+                ],
+                [
+                  "Total <- Total + 2",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Calculate the ticket cost first, then use that result in the update.",
+          "widgets": [
+            {
+              "id": "ticket-cost",
+              "type": "text",
+              "label": "Total after Tickets * Price",
+              "answer": "12",
+              "accept": [
+                "12"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            },
+            {
+              "id": "updated-total",
+              "type": "text",
+              "label": "Total after Total + 2",
+              "answer": "14",
+              "accept": [
+                "14"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Substitute the input",
+              "text": "Tickets is 3 and Price is 4. Multiply these values to obtain the initial total.",
+              "code": "Total <- 3 * 4  // 12"
+            },
+            {
+              "title": "Apply the update",
+              "text": "The next instruction uses the current Total and adds 2. Replace the stored value with this new result.",
+              "code": "Total <- 12 + 2  // 14"
+            }
+          ],
+          "model": "After Total <- Tickets * Price: 12. After Total <- Total + 2: 14.",
+          "rubric": [
+            "[1] 12 after Total <- Tickets * Price.",
+            "[1] 14 after Total <- Total + 2. Allow follow-through of +2 from the first value if that value is wrong; do not penalise the same arithmetic error twice."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "Write one pseudocode instruction that displays the message Payment complete.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "A fixed message is text, so distinguish it from a variable.",
+          "widgets": [
+            {
+              "id": "instruction",
+              "type": "choice",
+              "label": "Choose the matching pseudocode instruction",
+              "options": [
+                "OUTPUT \"Payment complete\"",
+                "INPUT \"Payment complete\"",
+                "OUTPUT Total",
+                "Payment <- \"complete\""
+              ],
+              "answer": 0,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Select the output operation",
+              "text": "The instruction must display information, so use OUTPUT rather than INPUT or an assignment."
+            },
+            {
+              "title": "Mark the message as text",
+              "text": "Put the complete message in quotation marks to distinguish literal text from variable names.",
+              "code": "OUTPUT \"Payment complete\""
+            }
+          ],
+          "model": "OUTPUT \"Payment complete\"",
+          "rubric": [
+            "[1] OUTPUT \"Payment complete\". Accept single quotes or another clear convention for literal text; accept harmless capitalisation differences in the message."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p3f7d0f85",
+      "number": 28,
+      "label": "Practice 28",
+      "title": "Searching a list",
+      "marks": 5,
+      "topics": [
+        "W3-L2",
+        "W6-L1"
+      ],
+      "context": [
+        {
+          "type": "text",
+          "text": "A linear search checks this list from position 1. It stops as soon as the target is found."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Position",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "rows": [
+            [
+              "Code",
+              "6",
+              "14",
+              "9",
+              "21"
+            ]
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "The target is 14. Write the two values compared, in order, until the search stops.",
+          "marks": 2,
+          "blocks": [
+            {
+              "type": "table",
+              "headers": [
+                "First comparison",
+                "Second comparison"
+              ],
+              "rows": [
+                [
+                  "",
+                  ""
+                ]
+              ]
+            }
+          ],
+          "hint": "Start at position 1 and stop at the first matching value.",
+          "widgets": [
+            {
+              "id": "first",
+              "type": "text",
+              "label": "First value compared",
+              "answer": "6",
+              "accept": [
+                "6"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            },
+            {
+              "id": "second",
+              "type": "text",
+              "label": "Second value compared",
+              "answer": "14",
+              "accept": [
+                "14"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check the first item",
+              "text": "The target is 14. The value at position 1 is 6, so the first comparison does not match.",
+              "code": "6 = 14 is FALSE"
+            },
+            {
+              "title": "Move to the next item",
+              "text": "The second value is 14. This matches the target, so the search stops without visiting 9 or 21.",
+              "code": "14 = 14 is TRUE"
+            }
+          ],
+          "model": "6, 14.",
+          "rubric": [
+            "[1] 6 as the first value compared.",
+            "[1] 14 as the second value compared. The search stops when 14 is found."
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "A new search starts at position 1 with target 40. State the number of comparisons made.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "This is a fresh search. Decide whether any list value matches its new target.",
+          "widgets": [
+            {
+              "id": "comparisons",
+              "type": "text",
+              "label": "Number of comparisons",
+              "answer": "4",
+              "accept": [
+                "4"
+              ],
+              "normalize": "number",
+              "marks": 1,
+              "placeholder": "Type a number"
+            }
+          ],
+          "steps": [
+            {
+              "title": "Check for the target",
+              "text": "The values are 6, 14, 9 and 21; none is 40."
+            },
+            {
+              "title": "Count every attempted comparison",
+              "text": "An unsuccessful linear search reaches the end. There are four items, so it makes four comparisons rather than stopping early."
+            }
+          ],
+          "model": "4",
+          "rubric": [
+            "[1] 4 comparisons. Every entry is checked because 40 is not in the list. This is independent of part (a)."
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Explain why a linear search can work on a list that is not sorted.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Consider whether the method uses value order to skip any items.",
+          "widgets": [
+            {
+              "id": "reason",
+              "type": "choice",
+              "label": "Choose the explanation",
+              "options": [
+                "It automatically sorts the list before searching.",
+                "It compares items one by one, so it does not rely on the values being ordered.",
+                "It checks only the smallest and largest values.",
+                "It knows the target's position before it starts."
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Look at the search method",
+              "text": "Linear search compares the target with each visited item in sequence. It does not decide where to look from the relative size of the values."
+            },
+            {
+              "title": "Connect the method to unsorted data",
+              "text": "Since it can visit every item if necessary, changing the value order does not stop it from finding a target that is present."
+            }
+          ],
+          "model": "It checks each item in sequence rather than using the order of the values to skip items.",
+          "rubric": [
+            "[1] Checks items one by one / every item in order until found, so it does not depend on value order. Do not require the exact wording."
+          ]
+        },
+        {
+          "id": "d",
+          "prompt": "The Boolean flag Found is set to FALSE before the search. It changes only when the target is found. State its final value after searching for 40.",
+          "marks": 1,
+          "blocks": [],
+          "hint": "A flag keeps its current value unless a stated event changes it.",
+          "widgets": [
+            {
+              "id": "found",
+              "type": "choice",
+              "label": "Final value of Found",
+              "options": [
+                "True",
+                "False"
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Read the starting state and update rule",
+              "text": "Found begins as FALSE and changes only if a comparison matches the target."
+            },
+            {
+              "title": "Apply the unsuccessful result",
+              "text": "There is no 40 in the list, so the event that would change the flag never happens. Found remains FALSE."
+            }
+          ],
+          "model": "FALSE",
+          "rubric": [
+            "[1] FALSE. Accept False."
+          ]
+        }
+      ],
+      "kind": "structured"
+    },
+    {
+      "id": "g8-p3b7acaa2",
+      "number": 29,
+      "label": "Practice 29",
+      "title": "Describe the process of linear search",
+      "marks": 1,
+      "topics": [
+        "W3-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which statement describes a linear search?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Focus on how the target is compared with each item.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "It always begins with the middle item.",
+                "It can only search a list that is already sorted.",
+                "It checks every item at the same time.",
+                "It compares the target with one item at a time, starting with the first item."
+              ],
+              "answer": 3,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Start at the beginning",
+              "text": "A linear search visits items in sequence and compares each visited value with the target."
+            },
+            {
+              "title": "Use the stopping rule",
+              "text": "Stop when a match is found, or when every item has been checked. This method does not require the list to be sorted."
+            }
+          ],
+          "model": "D. It compares the target with one item at a time, starting with the first item.\nLinear search checks items in sequence until the target is found or the list ends.",
+          "rubric": [
+            "[1] Select D: It compares the target with one item at a time, starting with the first item."
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p7ac6aa75",
+      "number": 30,
+      "label": "Practice 30",
+      "title": "Update before calculating output",
+      "marks": 1,
+      "topics": [
+        "W1-L2"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "What value is output by this pseudocode?",
+          "marks": 1,
+          "blocks": [
+            {
+              "type": "code",
+              "text": "Count <- 6\nCount <- Count + 3\nOUTPUT Count * 2"
+            }
+          ],
+          "hint": "Use the updated value in the final calculation.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "9",
+                "12",
+                "18",
+                "15"
+              ],
+              "answer": 2,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Update the stored value",
+              "text": "Count begins at 6. The next assignment adds 3 to its current value and stores 9."
+            },
+            {
+              "title": "Evaluate the output expression",
+              "text": "The output uses Count after the update, so double 9 rather than the original 6.",
+              "code": "OUTPUT 9 * 2  // 18"
+            }
+          ],
+          "model": "C. 18",
+          "rubric": [
+            "[1] Select C: 18"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    },
+    {
+      "id": "g8-p77c6a5bc",
+      "number": 31,
+      "label": "Practice 31",
+      "title": "Receiving a player name",
+      "marks": 1,
+      "topics": [
+        "W1-L1"
+      ],
+      "context": [],
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Which pseudocode instruction receives a value from the user and stores it in Player?",
+          "marks": 1,
+          "blocks": [],
+          "hint": "Look for the operation that receives data, rather than displaying it.",
+          "widgets": [
+            {
+              "id": "answer",
+              "type": "choice",
+              "label": "Your answer",
+              "options": [
+                "OUTPUT Player",
+                "INPUT Player",
+                "Player <- \"INPUT\"",
+                "OUTPUT \"Player\""
+              ],
+              "answer": 1,
+              "marks": 1
+            }
+          ],
+          "steps": [
+            {
+              "title": "Identify the direction of data",
+              "text": "Receiving a value from the user is an input operation. OUTPUT sends information in the opposite direction."
+            },
+            {
+              "title": "Name the storage destination",
+              "text": "The variable after INPUT holds the received value. The name must be Player rather than a quoted message.",
+              "code": "INPUT Player"
+            }
+          ],
+          "model": "B. INPUT Player",
+          "rubric": [
+            "[1] Select B: INPUT Player"
+          ]
+        }
+      ],
+      "kind": "mcq"
+    }
+  ],
+  "animations": [
+    {
+      "id": "g8-decision-branches",
+      "title": "Choose the first true branch",
+      "topic": "W4-L2",
+      "caption": "Follow a score through an if-elif-else chain and check the category boundaries.",
+      "frames": [
+        {
+          "title": "Start with the input",
+          "lines": [
+            "score = 65"
+          ],
+          "note": "A branch is chosen using this stored value."
+        },
+        {
+          "title": "Test the first threshold",
+          "lines": [
+            "if score >= 80:",
+            "65 >= 80 -> False"
+          ],
+          "note": "The High branch is skipped because its condition is false."
+        },
+        {
+          "title": "Try the next condition",
+          "lines": [
+            "elif score >= 50:",
+            "65 >= 50 -> True"
+          ],
+          "note": "The elif is reached only after the earlier condition is false."
+        },
+        {
+          "title": "Run the selected branch",
+          "lines": [
+            "print(\"Middle\")",
+            "Output: Middle"
+          ],
+          "note": "The first true branch supplies the only output for this run."
+        },
+        {
+          "title": "Skip the remaining branch",
+          "lines": [
+            "else:",
+            "    print(\"Low\")",
+            "Not executed"
+          ],
+          "note": "A selected branch ends this chain; the final else is skipped."
+        },
+        {
+          "title": "Check the boundaries",
+          "lines": [
+            "49 -> Low",
+            "50 -> Middle",
+            "80 -> High"
+          ],
+          "note": "The >= comparisons include their threshold values."
+        }
+      ]
+    },
+    {
+      "id": "g8-linear-search",
+      "title": "Search one item at a time",
+      "topic": "W3-L2",
+      "caption": "Count comparisons, stop on a match, and contrast an unsuccessful search.",
+      "frames": [
+        {
+          "title": "Set up the search",
+          "lines": [
+            "Codes: 6, 14, 9, 21",
+            "Target: 14",
+            "Found = FALSE"
+          ],
+          "note": "Start at position 1 with no match recorded yet."
+        },
+        {
+          "title": "Compare the first item",
+          "lines": [
+            "Position 1: 6",
+            "6 = 14 -> FALSE"
+          ],
+          "note": "One comparison has been made. Move to the next item."
+        },
+        {
+          "title": "Compare the second item",
+          "lines": [
+            "Position 2: 14",
+            "14 = 14 -> TRUE",
+            "Found = TRUE"
+          ],
+          "note": "The second comparison finds the target."
+        },
+        {
+          "title": "Stop at the match",
+          "lines": [
+            "Compared: 6, 14",
+            "Total comparisons: 2",
+            "9 and 21 are not checked"
+          ],
+          "note": "A successful linear search stops as soon as the target is found."
+        },
+        {
+          "title": "Start a fresh search",
+          "lines": [
+            "New target: 40",
+            "Compared: 6, 14, 9, 21",
+            "4 comparisons; Found = FALSE"
+          ],
+          "note": "An absent target requires every item to be checked."
+        }
+      ]
+    },
+    {
+      "id": "g8-selection-translation",
+      "title": "Translate selection into Python",
+      "topic": "W5-L2",
+      "caption": "Keep the same parking-charge algorithm while changing its notation into Python.",
+      "frames": [
+        {
+          "title": "Receive the input",
+          "lines": [
+            "INPUT Minutes",
+            "minutes = int(input())",
+            "Entered value: 30"
+          ],
+          "note": "The supplied Python input line stores the entered whole number."
+        },
+        {
+          "title": "Translate the condition",
+          "lines": [
+            "IF Minutes <= 30 THEN",
+            "if minutes <= 30:",
+            "30 <= 30 -> True"
+          ],
+          "note": "Keep <= so exactly 30 minutes belongs to this branch."
+        },
+        {
+          "title": "Store the lower charge",
+          "lines": [
+            "Charge <- 2",
+            "    charge = 2"
+          ],
+          "note": "Python uses = for assignment, with indentation inside the branch."
+        },
+        {
+          "title": "Keep the alternative",
+          "lines": [
+            "else:",
+            "    charge = 5",
+            "Skipped when minutes = 30"
+          ],
+          "note": "The else branch runs only when the condition is false."
+        },
+        {
+          "title": "Output after either branch",
+          "lines": [
+            "OUTPUT Charge",
+            "print(charge)",
+            "Output: 2"
+          ],
+          "note": "The unindented print runs after the selected assignment."
+        },
+        {
+          "title": "Try the next whole minute",
+          "lines": [
+            "minutes = 31",
+            "31 <= 30 -> False",
+            "charge = 5; output 5"
+          ],
+          "note": "Testing both sides of the boundary catches < versus <= errors."
+        }
+      ]
+    }
+  ],
+  "bankVersion": 2,
+  "challenge": {
+    "minutes": 60,
+    "marks": 50
+  }
+}

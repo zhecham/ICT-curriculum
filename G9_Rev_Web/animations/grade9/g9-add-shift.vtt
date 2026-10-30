@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.000
+Align an eight-bit addition
+00000111; + 00000001
+Both operands are unsigned. Start adding in the rightmost column.
+
+2
+00:00:04.000 --> 00:00:08.000
+Carry from the right
+Binary 1 + 1 = 10; Write 0; carry 1
+The carried 1 continues through the next two columns containing 1s.
+
+3
+00:00:08.000 --> 00:00:12.000
+Read the complete sum
+00000111 + 00000001; Result: 00001000; Denary check: 7 + 1 = 8
+The result fits in the available eight bits.
+
+4
+00:00:12.000 --> 00:00:16.000
+Shift the result left once
+00001000 -&gt; 00010000; Denary: 8 -&gt; 16
+A zero enters on the right. No significant bit is lost, so the value doubles.
+
+5
+00:00:16.000 --> 00:00:20.000
+Start again and shift right
+Start again: 00001000; Right shift: 00000100; Denary: 8 -&gt; 4
+This separate check starts from 8 again. A zero enters on the left.
+
+6
+00:00:20.000 --> 00:00:24.000
+Check an addition that is too large
+11111111 + 00000001; Full sum: 1 00000000; 256 &gt; 255: unsigned overflow
+The complete result needs nine bits. Keeping only eight would lose its value.

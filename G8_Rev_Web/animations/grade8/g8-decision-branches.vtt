@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.000
+Start with the input
+score = 65
+A branch is chosen using this stored value.
+
+2
+00:00:04.000 --> 00:00:08.000
+Test the first threshold
+if score &gt;= 80:; 65 &gt;= 80 -&gt; False
+The High branch is skipped because its condition is false.
+
+3
+00:00:08.000 --> 00:00:12.000
+Try the next condition
+elif score &gt;= 50:; 65 &gt;= 50 -&gt; True
+The elif is reached only after the earlier condition is false.
+
+4
+00:00:12.000 --> 00:00:16.000
+Run the selected branch
+print("Middle"); Output: Middle
+The first true branch supplies the only output for this run.
+
+5
+00:00:16.000 --> 00:00:20.000
+Skip the remaining branch
+else:;     print("Low"); Not executed
+A selected branch ends this chain; the final else is skipped.
+
+6
+00:00:20.000 --> 00:00:24.000
+Check the boundaries
+49 -&gt; Low; 50 -&gt; Middle; 80 -&gt; High
+The &gt;= comparisons include their threshold values.

@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.000
+Receive the input
+INPUT Minutes; minutes = int(input()); Entered value: 30
+The supplied Python input line stores the entered whole number.
+
+2
+00:00:04.000 --> 00:00:08.000
+Translate the condition
+IF Minutes &lt;= 30 THEN; if minutes &lt;= 30:; 30 &lt;= 30 -&gt; True
+Keep &lt;= so exactly 30 minutes belongs to this branch.
+
+3
+00:00:08.000 --> 00:00:12.000
+Store the lower charge
+Charge &lt;- 2;     charge = 2
+Python uses = for assignment, with indentation inside the branch.
+
+4
+00:00:12.000 --> 00:00:16.000
+Keep the alternative
+else:;     charge = 5; Skipped when minutes = 30
+The else branch runs only when the condition is false.
+
+5
+00:00:16.000 --> 00:00:20.000
+Output after either branch
+OUTPUT Charge; print(charge); Output: 2
+The unindented print runs after the selected assignment.
+
+6
+00:00:20.000 --> 00:00:24.000
+Try the next whole minute
+minutes = 31; 31 &lt;= 30 -&gt; False; charge = 5; output 5
+Testing both sides of the boundary catches &lt; versus &lt;= errors.

@@ -1,0 +1,31 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.400
+Write the positive magnitude
++12 = 8 + 4; 8-bit binary: 00001100
+Begin with the positive magnitude using all eight positions.
+
+2
+00:00:04.400 --> 00:00:08.800
+Invert all eight bits
+Before: 00001100; After:  11110011
+Change every 0 to 1 and every 1 to 0, including leading positions.
+
+3
+00:00:08.800 --> 00:00:13.200
+Add one
+11110011 + 00000001; Result: 11110100
+Adding one completes the two's-complement construction.
+
+4
+00:00:13.200 --> 00:00:17.600
+Interpret the leading bit
+8-bit signed pattern: 11110100; Most significant bit: weight -128
+The stated two's-complement interpretation makes the leading 1 negative.
+
+5
+00:00:17.600 --> 00:00:22.000
+Verify the represented value
+-128 + 64 + 32 + 16 + 4; Total: -12
+The signed place values confirm that the final pattern represents -12.
