@@ -5,5 +5,7 @@ REM Open websites for students
 start "" "https://zhecham.github.io/ICT-curriculum/2s_complement.html"
 start "" "https://zhecham.github.io/ICT-curriculum/Data_Representation.html"
 start "" "https://zhecham.github.io/ICT-curriculum/g6_rev.html"
-
+start "" "https://zhecham.github.io/ICT-curriculum/G7_Rev_Web/index.html#home"
+start "" "https://zhecham.github.io/ICT-curriculum/G8_Rev_Web/index.html#home"
+start "" "https://zhecham.github.io/ICT-curriculum/G9_Rev_Web/index.html#home"
 exit
