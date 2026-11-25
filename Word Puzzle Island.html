@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Word Puzzle Island</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Andika:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#6fdcff;--bg2:#fff3b0;--ink:#2b1b5a;--card:#fff;--c0:#ff4f8b;--c1:#ff9f1c;--c2:#12b5a6;--c3:#7b4dff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#241468;--bg2:#5a2bb0;--ink:#fff;--card:#3a2a86}}
+:root[data-theme="dark"]{--bg1:#241468;--bg2:#5a2bb0;--ink:#fff;--card:#3a2a86}
+*{box-sizing:border-box}html{min-height:100%}
+body{margin:0;min-height:100vh;background:linear-gradient(170deg,var(--bg1),var(--bg2)) fixed;color:var(--ink);font-family:Andika,"Comic Sans MS",system-ui,sans-serif;overflow-x:hidden}
+#app{max-width:880px;margin:0 auto;padding:14px;text-align:center}
+h1,h2,h3{font-family:"Baloo 2",Andika,system-ui,sans-serif;margin:.2em 0}
+h1{font-size:clamp(2.4rem,9vw,4.5rem);line-height:1}
+h2{font-size:clamp(1.5rem,5vw,2.4rem)}
+.big{font-size:clamp(4rem,18vw,8rem);display:inline-block;animation:fl 2.4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-14px) rotate(4deg)}}
+.b{font:800 clamp(1.3rem,4.5vw,2rem) "Baloo 2",Andika,sans-serif;background:var(--c1);color:#fff;border:0;border-radius:999px;padding:.5em 1.4em;margin:.5em;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.25);transition:transform .15s}
+.b:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.25)}.b.g{background:var(--c2)}.b.p{background:var(--c3)}.b.sm{font-size:1.4rem;padding:.3em .8em}
+button:focus-visible,input:focus-visible{outline:4px solid #fff;outline-offset:3px}
+input{font:700 clamp(1.6rem,6vw,2.6rem) Andika,sans-serif;text-align:center;width:min(100%,420px);padding:.4em;border-radius:1em;border:5px solid var(--c3);color:#2b1b5a;background:#fff}
+.lvls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:16px 0}
+.lc{background:var(--card);border-radius:28px;padding:18px;border:6px solid var(--c0);cursor:pointer;color:var(--ink);font-family:inherit;box-shadow:0 8px 0 rgba(0,0,0,.2)}
+.lc:nth-child(2){border-color:var(--c2)}.lc:nth-child(3){border-color:var(--c3)}.lc:disabled{filter:grayscale(1);opacity:.6;cursor:not-allowed}
+.lc span{display:block;font-size:3.4rem}.lc b{font:800 1.7rem "Baloo 2",sans-serif}.lc small{display:block;font-size:1.1rem}
+.top{display:flex;align-items:center;gap:10px}.dots{flex:1;display:flex;gap:6px;justify-content:center}
+.dots i{width:clamp(14px,4vw,26px);height:clamp(14px,4vw,26px);border-radius:50%;background:rgba(255,255,255,.7);border:3px solid var(--c3)}.dots i.d{background:var(--c2)}.dots i.c{background:var(--c1);transform:scale(1.3)}
+.board{background:var(--card);border-radius:32px;padding:clamp(14px,4vw,32px);margin:12px 0;min-height:300px;box-shadow:0 10px 0 rgba(0,0,0,.18);animation:pop .5s}
+@keyframes pop{from{transform:scale(.7) rotate(-4deg);opacity:0}}
+.slots,.tray{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,3vw,22px);min-height:clamp(80px,22vw,130px);align-items:center;transition:gap .5s}
+.slots{margin:6px 0 22px;padding:10px 0;border-bottom:4px dashed rgba(123,77,255,.35)}
+.slots.j{gap:0}.slots.j .pc{animation:pop .5s}
+.pc,.slot{position:relative;font:700 clamp(2.4rem,11vw,4.6rem) Andika,sans-serif;color:#fff;border:0;border-radius:22px;padding:.25em .55em;min-width:1.6em;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.slot{box-shadow:none;background:transparent!important;border:5px dashed;min-height:1.6em;cursor:default}
+.c0{background:var(--c0);border-color:var(--c0)}.c1{background:var(--c1);border-color:var(--c1)}.c2{background:var(--c2);border-color:var(--c2)}.c3{background:var(--c3);border-color:var(--c3)}
+.k::after{content:"";position:absolute;right:-.34em;top:50%;width:.6em;height:.6em;margin-top:-.3em;border-radius:50%;background:inherit;z-index:2;box-shadow:inherit}
+.slot.k::after{display:none}
+.pc:hover{transform:rotate(-3deg) scale(1.06)}.pc.sh{animation:sh .4s}
+@keyframes sh{25%{transform:translateX(-12px)}75%{transform:translateX(12px)}}
+.hint{font-size:clamp(1.2rem,4vw,1.7rem);font-weight:700;min-height:2em;margin:.6em 0}
+.scene{position:relative;height:clamp(200px,52vw,330px);border-radius:28px;overflow:hidden;border:6px solid #fff;box-shadow:0 8px 0 rgba(0,0,0,.2);display:flex;align-items:flex-end;justify-content:center;gap:2%;padding:0 4% 8%}
+.scene.sky{background:linear-gradient(#7fd6ff 60%,#7ed957 60%)}.scene.home{background:linear-gradient(#ffd6a5 62%,#c68b59 62%)}.scene.sea{background:linear-gradient(#aee6ff 45%,#2aa6e0 45%)}.scene.night{background:linear-gradient(#2b2a7a 62%,#4aa84a 62%)}
+.scene .sun{position:absolute;top:8px;right:16px;font-size:clamp(2rem,8vw,3.6rem);animation:fl 5s infinite}
+.scene .em{font-size:clamp(3rem,15vw,6.5rem);line-height:1;animation:fl 3s ease-in-out infinite}.scene .em:nth-child(2n){animation-delay:.6s}.scene .em:nth-child(3n){animation-delay:1.2s}
+.st{background:var(--card);border-radius:24px;padding:16px 20px;margin:16px 0;font:700 clamp(1.7rem,6vw,2.8rem)/1.45 Andika,sans-serif}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin:14px 0}
+.bd{background:var(--card);border-radius:22px;padding:12px 6px;font-size:1rem;font-weight:700;border:4px solid #ffd23f}.bd span{font-size:3rem;display:block}.bd.x{filter:grayscale(1);opacity:.45;border-color:#999}
+.toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:#ffd23f;color:#2b1b5a;font:800 1.4rem "Baloo 2",sans-serif;padding:.5em 1.2em;border-radius:999px;z-index:20;box-shadow:0 6px 0 rgba(0,0,0,.25);animation:pop .4s}
+.cf{position:fixed;top:-60px;font-size:2rem;z-index:15;pointer-events:none;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(540deg)}}
+.bd small{display:block;font-weight:400;font-size:.8rem;margin-top:4px}.bd:not(.x) span{animation:fl 3s infinite}
+.bd.t1:not(.x){border-color:#cd7f32}.bd.t2:not(.x){border-color:#b8c4d0}.bd.t3:not(.x){border-color:#ffd23f;animation:gl 2s infinite}
+@keyframes gl{50%{box-shadow:0 0 22px 6px #ffd23f}}
+.pu{position:fixed;inset:0;background:rgba(20,10,60,.6);display:grid;place-items:center;z-index:30;cursor:pointer}
+.pu>div{background:var(--card);border:8px solid #ffd23f;border-radius:36px;padding:24px 30px;max-width:86vw;animation:pop .5s}
+.pu .bg2{font-size:clamp(5rem,24vw,9rem);animation:fl 1.6s infinite}.pu b{font-size:1.8rem;display:block}.pu p{font-size:1.2rem;margin:.4em 0 0}
+.rk{font-size:clamp(1.3rem,4.5vw,2rem);font-weight:700}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div id="app"></div>
+<script>
+const L=[
+{t:"One-Beat Words",ic:"🐣",bn:["Tiny Word Hero","🦸"],
+w:"the and you big red cat dog sun hat run sit can see look play jump up down hop pig hen bed mom dad fun we go my is in on said like have with not they this that ran got bag cup bus fish tree ball home rain bird".split(" "),
+s:[["I see a big red bus. We go on the bus!","sky","🚌☀️"],["The dog and the cat can run. They like to play!","sky","🐶🐱⚽"],["A pig has a hat. The bird sat in the tree.","sky","🐷🎩🐦🌳"],["Mom said, “Go home!” It is rain. Dad has a bag.","home","🏠🌧️👨"]]},
+{t:"Two-Piece Puzzles",ic:"🧩",bn:["Puzzle Master","🧩"],
+w:"ba-by sis-ter moth-er fa-ther ta-ble pa-per or-ange ap-ple pen-cil mon-key yel-low pur-ple flow-er wa-ter sum-mer win-ter ti-ger rab-bit pup-py kit-ten hap-py fun-ny mon-ey can-dy cook-ie piz-za but-ter sand-wich break-fast sun-ny gar-den o-pen lis-ten lit-tle play-ground af-ter in-side out-side a-way to-day tea-cher stu-dent read-ing writ-ing bas-ket win-dow pic-ture ro-bot mu-sic rain-bow".split(" "),
+s:[["Today is sunny. The baby and sister go outside.","sky","👶👧☀️"],["A happy puppy runs in the garden. A little kitten listens.","sky","🐶🌷🐱"],["They see a yellow flower and a rainbow. Mother opens a basket.","sky","🌼🌈🧺👩"],["Inside is pizza and an apple. Everyone is happy!","home","🍕🍎😀"]]},
+{t:"Three-Piece Puzzles",ic:"🚀",bn:["Word Wizard","🧙"],
+w:"ba-na-na to-ma-to po-ta-to but-ter-fly el-e-phant di-no-saur com-pu-ter ho-li-day bi-cy-cle choc-o-late um-brel-la an-i-mal fam-i-ly to-geth-er ev-ery-one ev-ery-thing beau-ti-ful won-der-ful yes-ter-day Sat-ur-day ad-ven-ture ex-cit-ed im-por-tant dif-fer-ent fa-vor-ite ex-er-cise hos-pi-tal tel-e-phone vol-ca-no cal-en-dar li-brar-y pho-to-graph mag-a-zine go-ril-la kan-ga-roo croc-o-dile spa-ghet-ti ham-bur-ger de-li-cious ter-ri-ble cam-er-a mu-se-um ra-di-o vid-e-o pi-an-o cu-cum-ber di-a-ry no-bod-y some-bod-y an-y-one".split(" "),
+s:[["Yesterday was Saturday. Everyone in the family had an adventure.","sky","👨‍👩‍👧🚲🌄"],["A beautiful butterfly sat on a banana. An elephant had an umbrella.","sky","🦋🍌🐘☂️"],["It was a wonderful, exciting day. They took a photograph with a camera.","sea","🏝️📷😃"],["Together they ate delicious spaghetti. Everyone was happy!","home","🍝👨‍👩‍👧🎉"]]}];
+const $=s=>document.querySelector(s),app=$("#app");
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let S={name:"",un:1,b:{},w:0,hr:0,ls:0,dy:[]},pe=0,pt=0,we=0,st=0;
+try{Object.assign(S,JSON.parse(localStorage.getItem("wpi")||"{}"))}catch(e){}
+let ref=null,cloud=0,tm;
+const save=()=>{try{localStorage.setItem("wpi",JSON.stringify(S))}catch(e){}if(ref){clearTimeout(tm);tm=setTimeout(()=>ref.set({d:JSON.stringify(S)}).catch(()=>{}),600)}};
+function merge(o){S.name=S.name||o.name||"";S.un=Math.max(S.un,o.un||1);S.b=Object.assign({},o.b,S.b);["w","hr","ls"].forEach(k=>S[k]=Math.max(S[k]||0,o[k]||0));S.dy=[...new Set([...(S.dy||[]),...(o.dy||[])])]}
+(async()=>{try{const u=await claude.use("user"),db=await claude.use("db");if(!u||!db)return;const id=await u.id();ref=db.collection("data/users/"+id).doc("progress");const s=await ref.get();if(s.exists)merge(JSON.parse(s.data().d));cloud=1;save();const n=$("#nm");if(app.querySelector("#go")&&n&&!n.value)n.value=S.name;if(app.querySelector(".lvls"))map()}catch(e){}})();
+const rank=()=>{const n=Object.keys(S.b).length;return n>=25?["👑","Island Champion"]:n>=15?["🚀","Reading Rocket"]:n>=6?["🦊","Word Explorer"]:["🐣","Little Reader"]};
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.75;u.pitch=1.1;speechSynthesis.speak(u)}catch(e){}}
+let ac;function beep(f=660){try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.frequency.value=f;o.connect(g);g.connect(ac.destination);g.gain.setValueAtTime(.15,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.25);o.start();o.stop(ac.currentTime+.25)}catch(e){}}
+function boom(n=30){const e=["⭐","🎉","🌟","🎈","✨","🍭"];for(let i=0;i<n;i++){const s=document.createElement("span");s.className="cf";s.textContent=e[i%6];s.style.left=Math.random()*95+"%";s.style.animationDelay=Math.random()*.8+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),4200)}}
+function toast(t){const d=document.createElement("div");d.className="toast";d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
+function badges(){const a=[["first","🌟","First Word","Read your first word",1]];L.forEach((l,i)=>{const n=i+1;for(let s=0;s<5;s++)a.push([i+"s"+s,["⭐","🌈","🚀","🏆","💎"][s],"Level "+n+" · Part "+(s+1),"Finish part "+(s+1)+" of level "+n,1]);a.push([i+"P","🎯","Perfect Part "+n,"Finish a level "+n+" part with no mistakes",2]);a.push([i+"S","📖","Story Reader "+n,"Read the level "+n+" story",2]);a.push([i+"L",l.bn[1],l.bn[0],"Finish all of level "+n,3])});
+a.push(["h5","🔥","Hot Streak","Read 5 words in a row with no mistakes",1],["h10","⚡","Lightning Reader","Read 10 words in a row with no mistakes",2],["w25","🐣","Word Hatchling","Read 25 words",1],["w100","🦊","Word Fox","Read 100 words",2],["w250","🦄","Word Unicorn","Read 250 words",3],["hr10","🔊","Sound Explorer","Tap Hear it 10 times",1],["ls5","🎧","Story Listener","Tap Read to me 5 times",1],["d3","📅","Daily Reader","Play on 3 different days",2],["c10","🏅","Badge Collector","Win 10 badges",2],["c25","👑","Badge King","Win 25 badges",3]);return a}
+let q=[],busy=0;
+function award(id){if(S.b[id])return;S.b[id]=1;save();q.push(badges().find(b=>b[0]==id));if(!busy)nextPop();const n=Object.keys(S.b).length;if(n>=10)award("c10");if(n>=25)award("c25")}
+function nextPop(){const x=q.shift();if(!x){busy=0;return}busy=1;const d=document.createElement("div");d.className="pu";d.innerHTML=`<div><div class="bg2">${x[1]}</div><h2>New badge!</h2><b>${x[2]}</b><p>${x[3]}</p></div>`;document.body.appendChild(d);beep(990);boom(16);let f=0;const c=()=>{if(f)return;f=1;d.remove();nextPop()};d.onclick=c;setTimeout(c,2600)}
+function home(){app.innerHTML=`<div class="big">🏝️</div><h1>Word Puzzle Island</h1><h2>Read the words. Build the puzzles. Win badges!</h2><p><input id="nm" maxlength="14" placeholder="Type your name" value="${esc(S.name)}" aria-label="Your name"></p><button class="b" id="go">Let’s play! 🚀</button>`;
+$("#go").onclick=()=>{const v=$("#nm").value.trim();if(!v){$("#nm").focus();return}S.name=v;const dd=new Date().toDateString();if(!S.dy.includes(dd))S.dy.push(dd);if(S.dy.length>=3)award("d3");save();say("Hello "+v+"! Let’s read!");map()}}
+function map(){const n=Object.keys(S.b).length;app.innerHTML=`<h1>Hi ${esc(S.name)}! 👋</h1><p class="rk">${rank()[0]} ${rank()[1]}</p><h2>Pick a level</h2><div class="lvls">${L.map((l,i)=>{let d=0;for(let s=0;s<5;s++)if(S.b[i+"s"+s])d++;return`<button class="lc" data-i="${i}" ${i+1>S.un?"disabled":""}><span>${i+1>S.un?"🔒":l.ic}</span><b>Level ${i+1}</b><small>${l.t}</small><small>${"⭐".repeat(d)||"50 words"}</small></button>`}).join("")}</div><button class="b p" id="bg">🏅 My badges (${n})</button><button class="b g sm" id="nm">✏️ Change name</button><p>${cloud?"☁️ Progress saved to your account":"💾 Saved on this device"}</p>`;
+document.querySelectorAll(".lc").forEach(b=>b.onclick=()=>play(+b.dataset.i,0,0));$("#bg").onclick=shelf;$("#nm").onclick=home}
+function shelf(){const A=badges(),n=A.filter(b=>S.b[b[0]]).length;app.innerHTML=`<h1>🏅 ${esc(S.name)}’s badges</h1><p class="rk">${rank()[0]} ${rank()[1]} · ${n} of ${A.length}</p><div class="shelf">${A.map(b=>{const h=S.b[b[0]];return`<div class="bd t${b[4]} ${h?"":"x"}"><span>${h?b[1]:"❓"}</span>${h?b[2]:"<small>"+b[3]+"</small>"}</div>`}).join("")}</div><button class="b" onclick="map()">⬅ Back</button>`}
+function play(l,sec,i){if(i>=10)return secDone(l,sec);if(i==0){pe=0;pt=Date.now()}we=0;
+const w=L[l].w[sec*10+i],P=w.split("-"),last=P.length-1;let nx=0,o=P.map((_,k)=>k),t=0;
+if(P.length>1)do{o.sort(()=>Math.random()-.5)}while(o.every((v,k)=>P[v]==P[k])&&t++<30);
+app.innerHTML=`<div class="top"><button class="b sm" id="mp" aria-label="Map">🗺️</button><div class="dots">${[...Array(10)].map((_,k)=>`<i class="${k<i?"d":k==i?"c":""}"></i>`).join("")}</div></div><h3>${L[l].t} · Part ${sec+1}</h3>
+<div class="board"><div class="slots" id="sl">${P.map((_,k)=>`<span class="slot c${k%4} ${k<last?"k":""}"></span>`).join("")}</div><div class="tray">${o.map(k=>`<button class="pc c${k%4} ${k<last?"k":""}" data-k="${k}">${P[k]}</button>`).join("")}</div></div>
+<p class="hint" id="ht">${last?"Tap the pieces in order to build the word!":"Tap the card to read the word!"}</p><button class="b g" id="sp">🔊 Hear it</button><button class="b" id="nx" hidden>Next ➜</button>`;
+$("#mp").onclick=map;$("#sp").onclick=()=>{say(P.join(""));if(++S.hr>=10)award("hr10");save()};
+document.querySelectorAll(".pc").forEach(b=>b.onclick=()=>{const k=+b.dataset.k;
+if(P[k]===P[nx]){const sl=$("#sl");b.className=`pc c${nx%4} ${nx<last?"k":""}`;sl.children[nx].replaceWith(b);b.disabled=true;beep(500+nx*150);say(P[nx]);nx++;
+if(nx>last)setTimeout(()=>{sl.classList.add("j");beep(880);say(P.join(""));boom(10);$("#ht").textContent="You read “"+P.join("")+"”! 🎉";$("#nx").hidden=false;$("#nx").focus();award("first");S.w++;if(!we)st++;if(st>=5)award("h5");if(st>=10)award("h10");[[25,"w25"],[100,"w100"],[250,"w250"]].forEach(([n,k])=>{if(S.w>=n)award(k)});save()},500)}
+else{we=1;pe++;st=0;b.classList.add("sh");beep(180);setTimeout(()=>b.classList.remove("sh"),450)}});
+$("#nx").onclick=()=>play(l,sec,i+1)}
+function secDone(l,sec){award(l+"s"+sec);if(!pe)award(l+"P");boom();const e=sec<4;app.innerHTML=`<div class="big">⭐</div><h1>Great job, ${esc(S.name)}!</h1><h2>You read ${(sec+1)*10} words!</h2><button class="b" id="n">${e?"Next 10 words ➜":"Read the story 📖"}</button>`;say("Great job "+S.name);$("#n").onclick=()=>e?play(l,sec+1,0):story(l,0)}
+function story(l,p){const s=L[l].s[p],em=[...new Intl.Segmenter().segment(s[2])].map(x=>x.segment);
+app.innerHTML=`<h3>📖 Story · Page ${p+1} of 4</h3><div class="scene ${s[1]}"><div class="sun">${s[1]=="night"?"🌙":"☀️"}</div>${em.map(e=>`<div class="em">${e}</div>`).join("")}</div><p class="st">${s[0]}</p><button class="b g" id="rd">🔊 Read to me</button><button class="b" id="n">${p<3?"Next page ➜":"The End 🎉"}</button>`;
+$("#rd").onclick=()=>{say(s[0]);if(++S.ls>=5)award("ls5");save()};$("#n").onclick=()=>p<3?story(l,p+1):fin(l)}
+function fin(l){award(l+"S");award(l+"L");S.un=Math.max(S.un,l+2);save();boom(50);const x=L[l].bn;
+app.innerHTML=`<div class="big">${x[1]}</div><h1>${esc(S.name)}, you are a ${x[0]}!</h1><h2>${l<2?"Level "+(l+2)+" is open!":"You finished every level! 🏆"}</h2><button class="b" onclick="map()">Back to map 🗺️</button>`;say("Amazing "+S.name+"! You finished the level!")}
+home();
+</script></body></html>
