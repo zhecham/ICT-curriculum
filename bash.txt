@@ -4,4 +4,5 @@ title Student Websites
 REM Open websites for students
 start "" "https://zhecham.github.io/ICT-curriculum/Week_01_Session_01"
 start "" "https://zhecham.github.io/ICT-curriculum/Week_01_Session_02"
+start "" "https://forms.cloud.microsoft/r/TYqa2j7gnc"
 exit
